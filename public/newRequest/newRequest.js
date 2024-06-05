@@ -5,6 +5,9 @@ let directionsRenderer;
 let currentPosition;
 
 function initMap() {
+  //initializes the Google Map, sets up geocoding, directions service, and renderer.
+  //it also sets the initial map center to the user's current position if available.
+
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 32.08732603245494, lng: 34.80405370566349 },
     zoom: 17,
@@ -42,7 +45,7 @@ function initMap() {
   });
 
   document
-    .getElementById("current-location")
+    .getElementById("currentLocation")
     .addEventListener("click", function () {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -75,6 +78,7 @@ function initMap() {
 }
 
 function geocodeAddress(geocoder, resultsMap) {
+  //converts an address to geographic coordinates (latitude and longitude) and adds a marker to the map at that location.
   const address = document.getElementById("address").value;
   geocoder.geocode({ address: address }, function (results, status) {
     if (status === "OK") {
@@ -91,6 +95,8 @@ function geocodeAddress(geocoder, resultsMap) {
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+  //calculates and displays a walking route between the user's current position and a destination address specified by the user.
+  //it also displays the distance and duration of the route.
   const destinationAddress = document.getElementById("address").value;
   if (!currentPosition) {
     alert(
@@ -125,6 +131,8 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 }
 
 function handleLocationError(browserHasGeolocation, pos) {
+  //handles errors related to geolocation.
+  //if geolocation is not supported by the browser or if the Geolocation service fails, it alerts the user.
   map.setCenter(pos);
   alert(
     browserHasGeolocation
