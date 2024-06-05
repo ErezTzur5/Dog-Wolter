@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -35,6 +34,18 @@
 
     <main>
       <h1>Search for a dogwolter...</h1>
+      <input id="address" type="textbox" placeholder="Enter an address" />
+      <button id="submit">Geocode</button>
+      <button id="currentLocation">Use My Current Location</button>
+      <button id="navigate">Navigate</button>
+      <div id="map" style="height: 400px; width: 60%"></div>
+
+      <script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
+      ></script>
+
 
       <form action="" id="createNewRequest">
         <input
