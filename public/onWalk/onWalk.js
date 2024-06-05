@@ -1,5 +1,6 @@
 const requestDataUrl = "http://localhost:8001/requests";
 const dogwalkersDataURL = "http://localhost:8001/dogWalkers";
+let distanceP, durationP;
 
 window.onload = function () {
   const directionsService = new google.maps.DirectionsService();
@@ -8,6 +9,7 @@ window.onload = function () {
     new google.maps.Map(document.getElementById("map"))
   );
   calculateAndDisplayRoute(directionsService, directionsRenderer);
+  displayTimeAndDuration();
 };
 
 async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
@@ -51,8 +53,9 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
           const distance = leg.distance.text;
           const duration = leg.duration.text;
 
-          console.log("Distance: " + distance);
-          console.log("Duration: " + duration);
+          distanceP = distance;
+          durationP = duration;
+          displayTimeAndDuration();
         } else {
           alert("Directions request failed due to " + status);
         }
@@ -64,4 +67,10 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   }
 }
 
-// Ensure the function runs when the window load
+function displayTimeAndDuration() {
+  const timeUntilArrivalDiv = document.getElementById("timeUntilArrival");
+  timeUntilArrivalDiv.innerHTML = `
+  <p>Distance: ${distanceP}</p>
+  <p>Duration: ${durationP}</p>
+  `;
+}
