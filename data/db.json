@@ -1,20 +1,20 @@
 {
   "dogWalkers": [
     {
-        "name": "Walter White",
-        "address": "123 Dizengoff St, Tel Aviv, Israel",
-        "img": "https://static.wikia.nocookie.net/breakingbad/images/b/b4/Walter_2008.png/revision/latest/scale-to-width/360?cb=20200704164147",
-        "description": "High school chemistry teacher turned methamphetamine manufacturer. Loves spending time with his dog.",
-        "rating": 5.0,  
-        "id": "ec5e"  
+      "name": "Walter White",
+      "address": "123 Dizengoff St, Tel Aviv, Israel",
+      "img": "https://static.wikia.nocookie.net/breakingbad/images/b/b4/Walter_2008.png/revision/latest/scale-to-width/360?cb=20200704164147",
+      "description": "High school chemistry teacher turned methamphetamine manufacturer. Loves spending time with his dog.",
+      "rating": 5,
+      "id": "ec5e"
     },
     {
-        "name": "Johnny Sins",
-        "address": "456 Rothschild Blvd, Tel Aviv, Israel",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Guy%2C_Ava_Lauren_at_XRCO_Awards_2007_1_%28cropped%29.jpg",
-        "description": "Popular social media personality and actor. Enjoys spending time with his dogs and creating engaging content.",
-        "rating": 4.8,
-        "id": "9af2"
+      "name": "Johnny Sins",
+      "address": "456 Rothschild Blvd, Tel Aviv, Israel",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Guy%2C_Ava_Lauren_at_XRCO_Awards_2007_1_%28cropped%29.jpg",
+      "description": "Popular social media personality and actor. Enjoys spending time with his dogs and creating engaging content.",
+      "rating": 4.8,
+      "id": "9af2"
     },
     {
       "name": "Alice Johnson",
@@ -134,6 +134,24 @@
       "id": "cee1",
       "currentLocation": "qsdsadasdas",
       "currentTime": "12:03",
+      "timeDuration": "20"
+    },
+    {
+      "id": "1745",
+      "currentLocation": "asddsas",
+      "currentTime": "12:36",
+      "timeDuration": "20"
+    },
+    {
+      "id": "b915",
+      "currentLocation": "sdcsddas",
+      "currentTime": "16:30",
+      "timeDuration": "20"
+    },
+    {
+      "id": "3585",
+      "currentLocation": "hfghdfgdfgsd",
+      "currentTime": "12:55",
       "timeDuration": "20"
     }
   ]
