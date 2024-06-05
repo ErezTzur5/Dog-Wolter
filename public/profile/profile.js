@@ -34,7 +34,7 @@ async function displayProfile() {
       <p>${health}</p>
     `;
   } catch (error) {
-    console.error("Error fetching profile data:", error);
+    // error message
   }
 }
 
