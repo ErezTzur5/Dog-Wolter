@@ -5,13 +5,23 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+.margin-inline-general {
+  margin-inline: var(--content-spacing-medium);
+}
 .navbar-wrapper {
   background-color: var(--clr-accent-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+.content-section {
+  padding-block: var(--content-spacing-medium);
 }
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   padding-left: 0px;
   margin-right: var(--content-spacing-medium);
 }
@@ -22,14 +32,15 @@ body {
   align-self: center;
 }
 .dog-wolter-navbar-logo {
-  width: 65px;
-  height: 80px;
+  width: 50px;
+  height: 60px;
 }
 .nav-links {
   display: flex;
   flex-direction: column;
   width: 130px;
   margin-bottom: var(--content-spacing-xs);
+  gap: 1vh;
 }
 .nav-links a {
   margin-right: var(--content-spacing-small);
@@ -39,9 +50,14 @@ body {
 }
 main {
   background-color: var(--clr-background-primary);
+  margin-top: 100px;
+  margin-bottom: var(--content-spacing-large);
+  font-weight: 500;
 }
 .heading {
   color: var(--clr-accent-primary);
+  padding-bottom: var(--content-spacing-small);
+  line-height: 1.2;
 }
 
 .cta-button {
@@ -49,6 +65,23 @@ main {
   color: var(--clr-text-light);
   border: none;
   border-radius: 6px;
+  padding: var(--content-spacing-medium);
+  margin-block: var(--content-spacing-small);
+  margin-inline: auto;
+}
+.content-section-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.center-heading {
+  text-align: center;
+}
+.heading-block-spacing {
+  padding-block: var(--content-spacing-small);
+}
+.heading-size-increase {
+  font-size: 1.7rem;
 }
 .info-section-wrapper {
   background-color: var(--clr-text-primary);
@@ -57,14 +90,23 @@ main {
 .info-section-wrapper .heading {
   color: var(--clr-danger-400);
 }
+.info-section-wrapper h2 {
+  padding-top: var(--content-spacing-small);
+  margin-left: var(--content-spacing-medium-small);
+}
 .info-section-wrapper .info-card {
   background-color: var(--clr-accent-primary);
 }
-.info-section-wrapper .heading {
-  margin-bottom: var(--content-spacing-medium-small);
+.info-card {
+  border-radius: 8px;
+  padding: var(--content-spacing-medium);
 }
+.section-icon {
+  margin-right: var(--content-spacing-small);
+}
+
 .info-section:last-child {
-  margin-bottom: var(--content-spacing-medium);
+  padding-bottom: var(--content-spacing-medium);
 }
 .info-section {
   display: flex;
