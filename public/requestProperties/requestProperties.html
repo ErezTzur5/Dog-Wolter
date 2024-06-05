@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
   </head>
   <body>
@@ -21,8 +26,10 @@
           </li>
           <li class="nav-links">
             <a href="../home/homePage.html">Home</a>
-            <a href="../newRequest/newRequest.html">Submit new request</a>
-            <a class="current-page" href="profile.html">Profile</a>
+            <a class="current-page" href="../newRequest/newRequest.html"
+              >Submit new request</a
+            >
+            <a href="../home/homePage.html">Profile</a>
           </li>
           <li class="login">
             <a href="login.html">Login</a>
@@ -42,9 +49,15 @@
     <div id="availableDogwalkers">
       <h2>Available Dogwalkers</h2>
       <div id="dogwalkerCard">
-        <img src="" alt="" />
-        <p>Name:</p>
-        <button onclick="acceptRequest()">Accept</button>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Guy%2C_Ava_Lauren_at_XRCO_Awards_2007_1_%28cropped%29.jpg"
+          alt="dogWalkerPhoto"
+          style="width: 70px; height: 70px; border-radius: 50%; cursor: pointer"
+          onclick="showDogwalkerProperties(this)"
+        />
+        <p>Name: Yuval</p>
+        <p id="walker-id" class="hidden">ec5e</p>
+        <button onclick="acceptRequest(this)">Accept</button>
         <button onclick="declineRequest(this)">Decline</button>
       </div>
     </div>
@@ -53,3 +66,4 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
+<img src="" alt="" />

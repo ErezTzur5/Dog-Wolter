@@ -47,7 +47,6 @@ function showErrorToast(msgTitle) {
 function showToast() {
   Swal.fire({
     title: "<strong>HTML <u>Wolter</u></strong>",
-    icon: "info",
     html: `
           You can use <b>bold text</b>,
           <a href="#">links</a>,

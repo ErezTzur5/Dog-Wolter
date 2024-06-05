@@ -1,4 +1,4 @@
-const URL = "http://localhost:8001";
+const dataURL = "http://localhost:8001";
 
 function setDefaultTime() {
   const now = new Date();
@@ -23,7 +23,7 @@ document
       timeDuration: timeDurationEl,
     };
     axios
-      .post(`${URL}/requests`, newRequest)
+      .post(`${dataURL}/requests`, newRequest)
       .then((response) => {
         const requestId = response.data.id;
         const newUrl = `http://127.0.0.1:5500/public/requestProperties/requestProperties.html?id=${encodeURIComponent(
