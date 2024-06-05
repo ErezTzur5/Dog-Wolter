@@ -1,4 +1,17 @@
 {
+  "users": [
+    {
+      "id": "1f78",
+      "image": "../style/images/OIG1.jpg",
+      "name": "Rexi",
+      "age": "3 years old",
+      "breed": "Labrador",
+      "hobbies": "Fetching tennis balls, swimming in the lake, going for long walks in the park, cuddling with stuffed toys, learning new tricks",
+      "treats": "Peanut butter biscuits, freeze-dried liver snacks",
+      "skills": "Excellent at catching frisbees mid-air, can perform basic obedience commands like sit, stay, and shake",
+      "health": "Up to date on vaccinations, regular check-ups at the vet, enjoys good health and a balanced diet."
+    }
+  ],
   "dogWalkers": [
     {
       "name": "Walter White",

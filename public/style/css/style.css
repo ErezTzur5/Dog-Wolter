@@ -384,6 +384,7 @@ body.swal2-shown > [aria-hidden="true"] {
   background-repeat: no-repeat;
   position: relative;
   left: 45%;
+  cursor: pointer;
 }
 
 .save-btn {
@@ -396,6 +397,7 @@ body.swal2-shown > [aria-hidden="true"] {
   background-repeat: no-repeat;
   position: relative;
   left: 45%;
+  cursor: pointer;
 }
 .rating-star {
   width: 10px;
