@@ -163,6 +163,36 @@
       "currentLocation": "",
       "currentTime": "13:37",
       "timeDuration": "20"
+    },
+    {
+      "id": "b4d9",
+      "currentLocation": "Bialik Street, Ramat Gan, Israel",
+      "currentTime": "17:38",
+      "timeDuration": "20"
+    },
+    {
+      "id": "4fca",
+      "currentLocation": "Bialik Street, Ramat Gan, Israel",
+      "currentTime": "17:41",
+      "timeDuration": "20"
+    },
+    {
+      "id": "75e3",
+      "currentLocation": "Bialik Street, Ramat Gan, Israel",
+      "currentTime": "17:43",
+      "timeDuration": "20"
+    },
+    {
+      "id": "cf19",
+      "currentLocation": "Migdal HaEmek, Israel",
+      "currentTime": "17:43",
+      "timeDuration": "20"
+    },
+    {
+      "id": "ce9d",
+      "currentLocation": "Poland",
+      "currentTime": "17:45",
+      "timeDuration": "20"
     }
   ]
 }

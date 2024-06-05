@@ -1,4 +1,4 @@
-const URL = "http://localhost:8001";
+const dataURL = "http://localhost:8001";
 let autocomplete;
 
 function setDefaultTime() {

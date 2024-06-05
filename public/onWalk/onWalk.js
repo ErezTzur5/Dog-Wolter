@@ -1,6 +1,15 @@
 const requestDataUrl = "http://localhost:8001/requests";
 const dogwalkersDataURL = "http://localhost:8001/dogWalkers";
 
+window.onload = function () {
+  const directionsService = new google.maps.DirectionsService();
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(
+    new google.maps.Map(document.getElementById("map"))
+  );
+  calculateAndDisplayRoute(directionsService, directionsRenderer);
+};
+
 async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   try {
     // Get the query parameters from the URL
@@ -55,12 +64,4 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   }
 }
 
-// Ensure the function runs when the window loads
-window.onload = function () {
-  const directionsService = new google.maps.DirectionsService();
-  const directionsRenderer = new google.maps.DirectionsRenderer();
-  directionsRenderer.setMap(
-    new google.maps.Map(document.getElementById("map"))
-  );
-  calculateAndDisplayRoute(directionsService, directionsRenderer);
-};
+// Ensure the function runs when the window load
