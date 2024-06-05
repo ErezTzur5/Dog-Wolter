@@ -22,10 +22,16 @@ document
       currentTime: currentTime,
       timeDuration: timeDurationEl,
     };
-    try {
-      axios.post(`${URL}/requests`, newRequest);
-      // surccess message
-    } catch (err) {
-      // error message
-    }
+    axios
+      .post(`${URL}/requests`, newRequest)
+      .then((response) => {
+        const requestId = response.data.id;
+        const newUrl = `http://127.0.0.1:5500/public/requestProperties/requestProperties.html?id=${encodeURIComponent(
+          requestId
+        )}`;
+        window.location.href = newUrl;
+      })
+      .catch((err) => {
+        //error message
+      });
   });
