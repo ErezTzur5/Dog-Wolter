@@ -1,4 +1,4 @@
-const URL = "http://localhost:8001";
+const dataURL = "http://localhost:8001";
 let autocomplete;
 
 function setDefaultTime() {
@@ -30,23 +30,35 @@ document
     const timeDurationEl = document.getElementById("time-duration").value;
     const currentTime = document.getElementById("time").value;
     const currentLocation = document.getElementById("current-location").value;
-    const newRequest = {
-      currentLocation: currentLocation,
-      currentTime: currentTime,
-      timeDuration: timeDurationEl,
-    };
-    axios
-      .post(`${URL}/requests`, newRequest)
-      .then((response) => {
-        const requestId = response.data.id;
-        const newUrl = `http://127.0.0.1:5500/public/requestProperties/requestProperties.html?id=${encodeURIComponent(
-          requestId
-        )}`;
-        window.location.href = newUrl;
-      })
-      .catch((err) => {
-        //error message
-      });
+
+    // Use Google Maps Geocoder to validate the location
+    const geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ address: currentLocation }, (results, status) => {
+      if (status === "OK" && results.length > 0) {
+        // Location is valid
+        const newRequest = {
+          currentLocation: currentLocation,
+          currentTime: currentTime,
+          timeDuration: timeDurationEl,
+        };
+        axios
+          .post(`${dataURL}/requests`, newRequest)
+          .then((response) => {
+            const requestId = response.data.id;
+            const newUrl = `http://127.0.0.1:5500/public/requestProperties/requestProperties.html?id=${encodeURIComponent(
+              requestId
+            )}`;
+            window.location.href = newUrl;
+          })
+          .catch((err) => {
+            //error message
+          });
+      } else {
+        // Location is not valid
+        console.log("Invalid location");
+        // You can add your validation error handling here
+      }
+    });
   });
 
 document.getElementById("time").addEventListener("click", function () {

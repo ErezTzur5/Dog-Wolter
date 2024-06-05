@@ -232,10 +232,33 @@ select option:hover {
   }
   .info-card {
     width: calc((100% - 3vh - 1em - 50px) / 3);
-    line-height: 23pt;
+    line-height: 23pt;
   }
   .request-content-wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+body.swal2-shown > [aria-hidden='true'] {
+  transition: 0.1s filter;
+  filter: blur(3px);
+}
+
+
+/*//////////////////////////////////////////// PROFILE.CSS ////////////////////////////////////////////////////*/
+
+.dog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-accent-primary);
+  border-radius: 8px;
+  width: 500px;
+  padding: 15px
 }
