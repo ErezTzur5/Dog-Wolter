@@ -1,21 +1,80 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Google Maps Example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/css/style.css" />
+    <title>Get your DogWolter</title>
   </head>
   <body>
-    <input id="address" type="textbox" placeholder="Enter an address" />
-    <button id="submit">Geocode</button>
-    <button id="currentLocation">Use My Current Location</button>
-    <button id="navigate">Navigate</button>
-    <div id="map" style="height: 400px; width: 60%"></div>
+    <header>
+      <nav class="navbar-wrapper">
+        <ul class="navbar">
+          <li class="logo">
+            <a href="../home/homePage.html">
+              <img
+                class="dog-wolter-navbar-logo"
+                src="../style/images/OIG2.png"
+                alt="DogWolter Logo"
+              />
+            </a>
+          </li>
+          <li class="nav-links">
+            <a href="../home/homePage.html">Home</a>
+            <a class="current-page" href="newRequest/newRequest.html"
+              >Get a DogWolter</a
+            >
+            <a href="../profile/profile.html">Profile</a>
+          </li>
+          <li class="login">
+            <a href="login.html">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
-    ></script>
+    <main>
+      <h1>Search for a dogwolter...</h1>
+      <input id="address" type="textbox" placeholder="Enter an address" />
+      <button id="submit">Geocode</button>
+      <button id="currentLocation">Use My Current Location</button>
+      <button id="navigate">Navigate</button>
+      <div id="map" style="height: 400px; width: 60%"></div>
 
+      <script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
+      ></script>
+
+
+      <form action="" id="createNewRequest">
+        <input
+          type="text"
+          name=""
+          id="currentLocation"
+          placeholder="Current Location"
+          required
+        />
+        <select id="time-duration" name="time-duration" required>
+          <option value="5">5 minutes</option>
+          <option value="10">10 minutes</option>
+          <option value="15">15 minutes</option>
+          <option value="20" selected>20 minutes</option>
+          <option value="25">25 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="35">35 minutes</option>
+          <option value="40">40 minutes</option>
+          <option value="45">45 minutes</option>
+          <option value="50">50 minutes</option>
+          <option value="55">55 minutes</option>
+          <option value="60">60 minutes</option>
+        </select>
+        <input type="time" name="" id="time" placeholder="When" required />
+        <button type="submit">Search</button>
+      </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./newRequest.js"></script>
   </body>
 </html>

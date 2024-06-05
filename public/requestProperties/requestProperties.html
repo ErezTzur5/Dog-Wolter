@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li class="logo">
+            <a href="../home/homePage.html">
+              <img
+                class="dog-wolter-navbar-logo"
+                src="../style/images/OIG2.png"
+                alt="DogWolter Logo"
+              />
+            </a>
+          </li>
+          <li class="nav-links">
+            <a href="../home/homePage.html">Home</a>
+            <a href="../newRequest/newRequest.html">Submit new request</a>
+            <a class="current-page" href="profile.html">Profile</a>
+          </li>
+          <li class="login">
+            <a href="login.html">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="requestProperties">
+      <!-- <p>your location: </p>
+      <p>when you want the dogwolter: </p>
+      <p>duration trip time: </p> -->
+      <button onclick="editRequest()">edit your request</button>
+      <button onclick="deleteRequest()">delete your request</button>
+    </div>
+
+    <div id="availableDogwalkers">
+      <h2>Available Dogwalkers</h2>
+      <div id="dogwalkerCard">
+        <img src="" alt="" />
+        <p>Name:</p>
+        <button onclick="acceptRequest()">Accept</button>
+        <button onclick="declineRequest()">Decline</button>
+      </div>
+    </div>
+
+    <script src="./requestProperties.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>

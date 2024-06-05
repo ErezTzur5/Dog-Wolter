@@ -1,0 +1,140 @@
+{
+  "dogWalkers": [
+    {
+        "name": "Walter White",
+        "address": "123 Dizengoff St, Tel Aviv, Israel",
+        "img": "https://static.wikia.nocookie.net/breakingbad/images/b/b4/Walter_2008.png/revision/latest/scale-to-width/360?cb=20200704164147",
+        "description": "High school chemistry teacher turned methamphetamine manufacturer. Loves spending time with his dog.",
+        "rating": 5.0,  
+        "id": "ec5e"  
+    },
+    {
+        "name": "Johnny Sins",
+        "address": "456 Rothschild Blvd, Tel Aviv, Israel",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Guy%2C_Ava_Lauren_at_XRCO_Awards_2007_1_%28cropped%29.jpg",
+        "description": "Popular social media personality and actor. Enjoys spending time with his dogs and creating engaging content.",
+        "rating": 4.8,
+        "id": "9af2"
+    },
+    {
+      "name": "Alice Johnson",
+      "address": "789 Ibn Gabirol St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/women/3.jpg",
+      "description": "Project manager with a knack for keeping projects on track and within budget. Loves taking my Beagle to the park.",
+      "rating": 4.6,
+      "id": "3f2f"
+    },
+    {
+      "name": "Bob Brown",
+      "address": "321 Allenby St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/men/4.jpg",
+      "description": "Experienced sales representative with a talent for building customer relationships. Frequently goes jogging with my Border Collie.",
+      "rating": 4.7,
+      "id": "7430"
+    },
+    {
+      "name": "Cathy White",
+      "address": "654 Florentin St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/women/5.jpg",
+      "description": "Content writer and editor specializing in creating engaging and informative articles. Have a Poodle I'm adores.",
+      "rating": 4.9,
+      "id": "5432"
+    },
+    {
+      "name": "David Black",
+      "address": "987 Ben Yehuda St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/men/6.jpg",
+      "description": "IT support specialist with expertise in troubleshooting and resolving technical issues. Enjoys training my Labrador.",
+      "rating": 4.4,
+      "id": "9f42"
+    },
+    {
+      "name": "Emily Green",
+      "address": "159 Hayarkon St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/women/7.jpg",
+      "description": "Marketing coordinator with a background in social media management and content creation. Loves playing fetch with my Cocker Spaniel.",
+      "rating": 4.8,
+      "id": "2081"
+    },
+    {
+      "name": "Frank Blue",
+      "address": "753 Shenkin St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/men/8.jpg",
+      "description": "Financial analyst with a strong understanding of market trends and financial modeling. Regularly hikes with my Husky.",
+      "rating": 4.5,
+      "id": "fa14"
+    },
+    {
+      "name": "Grace Yellow",
+      "address": "852 Jaffa St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/women/9.jpg",
+      "description": "Human resources specialist with experience in recruitment and employee relations. Loves dogs!.",
+      "rating": 4.7,
+      "id": "6efc"
+    },
+    {
+      "name": "Henry Violet",
+      "address": "951 Carmel Market St, Tel Aviv, Israel",
+      "img": "https://randomuser.me/api/portraits/men/10.jpg",
+      "description": "Product manager who excels at leading cross-functional teams to deliver high-quality products. Have a German Shepherd I loves.",
+      "rating": 4.6,
+      "id": "bac9"
+    }
+  ],
+  "requests": [
+    {
+      "id": "556d",
+      "currentLocation": "dasdas",
+      "currentTime": "11:11",
+      "timeDuration": "20"
+    },
+    {
+      "id": "3e39",
+      "currentLocation": "asddas",
+      "currentTime": "11:27",
+      "timeDuration": "20"
+    },
+    {
+      "id": "5d52",
+      "currentLocation": "eqweqw",
+      "currentTime": "11:32",
+      "timeDuration": "20"
+    },
+    {
+      "id": "008c",
+      "currentLocation": "asdads",
+      "currentTime": "11:32",
+      "timeDuration": "20"
+    },
+    {
+      "id": "8360",
+      "currentLocation": "adsdasasd",
+      "currentTime": "11:40",
+      "timeDuration": "20"
+    },
+    {
+      "id": "7e4f",
+      "currentLocation": "afdsfsdv",
+      "currentTime": "11:43",
+      "timeDuration": "20"
+    },
+    {
+      "id": "13b4",
+      "currentLocation": "asdads",
+      "currentTime": "11:57",
+      "timeDuration": "20"
+    },
+    {
+      "id": "c452",
+      "currentLocation": "jvhvjhgjhkh",
+      "currentTime": "11:58",
+      "timeDuration": "20"
+    },
+    {
+      "id": "cee1",
+      "currentLocation": "qsdsadasdas",
+      "currentTime": "12:03",
+      "timeDuration": "20"
+    }
+  ]
+}
