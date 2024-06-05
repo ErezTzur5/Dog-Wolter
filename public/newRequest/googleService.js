@@ -76,6 +76,25 @@ function initMap() {
   });
 }
 
+function loadGoogleMapsAPI() {
+  return axios.get(
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap",
+    { timeout: 5000 }
+  );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  loadGoogleMapsAPI()
+    .then((response) => {
+      console.log("Google Maps API loaded successfully");
+
+      initMap();
+    })
+    .catch((error) => {
+      console.error("Error loading Google Maps API:", error);
+    });
+});
+
 function geocodeAddress(geocoder, resultsMap) {
   //converts an address to geographic coordinates (latitude and longitude) and adds a marker to the map at that location.
   const address = document.getElementById("address").value;

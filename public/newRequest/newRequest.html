@@ -38,12 +38,6 @@
       <button id="navigate">Navigate</button>
       <div id="map" style="height: 400px; width: 60%"></div>
 
-      <script
-        async
-        defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
-      ></script>
-
       <form action="" id="createNewRequest">
         <input
           type="text"
@@ -71,7 +65,13 @@
       </form>
     </main>
 
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./newRequest.js"></script>
+    <script src="./googleService.js"></script>
   </body>
 </html>
