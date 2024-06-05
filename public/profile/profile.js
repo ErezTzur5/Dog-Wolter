@@ -1,5 +1,6 @@
 const editButton = document.getElementById("editButton");
 const saveButton = document.getElementById("saveButton");
+// const dogP = document.getElementById("dogName");
 
 function editProfile(svgElement) {
   try {
@@ -9,8 +10,8 @@ function editProfile(svgElement) {
       const input = document.createElement("input");
       input.value = paragraph.textContent;
       paragraph.replaceWith(input);
-      editButton.classList.add("hidden");
-      saveButton.classList.remove("hidden");
+      editButton.style.display = "none";
+      saveButton.style.display = "block";
     });
   } catch (error) {
     // error message
@@ -25,8 +26,9 @@ function saveProfile(svgElement) {
       const p = document.createElement("p");
       p.textContent = input.value;
       input.replaceWith(p);
-      editButton.classList.remove("hidden");
-      saveButton.classList.add("hidden");
+      editButton.style.display = "block";
+      saveButton.style.display = "none";
+      // dogP.classList.add("dog-name");
     });
   } catch (error) {
     // error message

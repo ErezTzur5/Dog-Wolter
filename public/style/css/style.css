@@ -136,6 +136,91 @@ select option:hover {
   background-color: rgb(17, 17, 9); /* Change to desired color */
 }
 
+
+/*//////////////////////////////////////////// PROFILE.CSS ////////////////////////////////////////////////////*/
+
+.dog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-accent-primary);
+  border-radius: 8px;
+  width: 500px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 0.2rem;
+  gap: 0.3rem;
+}
+
+.dog-img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding-bottom: 0.5rem;
+}
+
+.dog-card h3 {
+  color: var(--clr-danger-400);
+  text-shadow: var(--text-shadow);
+}
+.dog-card p {
+  color: var(--clr-text-light);
+}
+
+.dog-card input {
+  width: 80%;
+  height: 2.5rem;
+  max-width: 500px;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  resize: vertical;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-top: 3px;
+}
+
+.dog-card input:focus{
+  border-color: #ffa51f;
+  box-shadow: 0 0 10px rgba(255, 165, 31, 0.5);
+  outline: none;
+}
+
+
+.dog-name {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.edit-btn{
+  background-image: url(../../profile/icons/edit.svg);
+  height: 40px;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  border:none;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 45%;
+}
+
+.save-btn{
+  display: none;
+  background-image: url(../../profile/icons/save.svg);
+  height: 40px;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  border:none;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 45%;
+}
+
+
+
+
+
 @media screen and (min-width: 430px) {
   .nav-links {
     flex-direction: row;
@@ -247,18 +332,4 @@ select option:hover {
 body.swal2-shown > [aria-hidden='true'] {
   transition: 0.1s filter;
   filter: blur(3px);
-}
-
-
-/*//////////////////////////////////////////// PROFILE.CSS ////////////////////////////////////////////////////*/
-
-.dog-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--clr-accent-primary);
-  border-radius: 8px;
-  width: 500px;
-  padding: 15px
 }
