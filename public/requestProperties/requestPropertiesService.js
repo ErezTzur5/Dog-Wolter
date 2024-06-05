@@ -49,19 +49,18 @@ export function showToast(
 ) {
   Swal.fire({
     html: `
-          <img src="${img}" alt="dogWalkerPic" style="width: 200px; height: 200px; border-radius: 50%; margin-left: 27%">
-          <h1><b>${dogwalkerName}</b></h1>
-          <br></br>
-          <p><b>Phone Number:</b> ${phone}</p>
-          <p><b>Address:</b> ${address}</p>
-          <p><b>Description:</b> ${description}</p>
-          <p><b>Rating:</b> ${rating}</p>
+          <img class = "popup-pic" src="${img}" alt="dogWalkerPic"">
+          <h1 class = "popup-header"><b>${dogwalkerName}</b></h1>
+          <p class = "popup-phone-number"><b>Phone Number:</b> ${phone}</p>
+          <p class = "popup-address"><b>Address:</b> ${address}</p>
+          <p class = "popup-description"><b>Description:</b> ${description}</p>
+          <p class = "popup-rating"><b>Rating:</b> ${rating}</p>
         `,
     showCloseButton: false,
     showCancelButton: false,
     focusConfirm: false,
     confirmButtonText: `
-          <i class="fa fa-thumbs-up"></i> Close
+          Close
         `,
     confirmButtonAriaLabel: "Thumbs up, great!",
     cancelButtonText: `

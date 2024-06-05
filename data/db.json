@@ -283,30 +283,6 @@
       "currentTime": "20:52",
       "timeDuration": " 67",
       "id": "2442"
-    },
-    {
-      "id": "4528",
-      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
-      "currentTime": "21:26",
-      "timeDuration": "20"
-    },
-    {
-      "id": "d91c",
-      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
-      "currentTime": "21:46",
-      "timeDuration": "20"
-    },
-    {
-      "id": "aa66",
-      "currentLocation": "Patai St 14, Giv'atayim, Israel",
-      "currentTime": "23:00",
-      "timeDuration": "20"
-    },
-    {
-      "id": "abe4",
-      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
-      "currentTime": "23:05",
-      "timeDuration": "20"
     }
   ]
 }
