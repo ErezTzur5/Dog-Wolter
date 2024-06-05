@@ -259,6 +259,18 @@
       "currentLocation": "Patai St 14, Giv'atayim, Israel",
       "currentTime": "18:35",
       "timeDuration": "20"
+    },
+    {
+      "id": "7954",
+      "currentLocation": "Bialik Street 123, Ramat Gan, Israel",
+      "currentTime": "22:56",
+      "timeDuration": "35"
+    },
+    {
+      "id": "97c4",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "19:35",
+      "timeDuration": "20"
     }
   ]
 }

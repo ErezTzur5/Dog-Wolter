@@ -95,42 +95,6 @@ function reverseGeocode(latlng) {
   });
 }
 
-function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-  //calculates and displays a walking route between the user's current position and a destination address specified by the user.
-  //it also displays the distance and duration of the route.
-  const destinationAddress = document.getElementById("address").value;
-  if (!currentPosition) {
-    alert(
-      "Current position not found. Please ensure location services are enabled."
-    );
-    return;
-  }
-
-  directionsService.route(
-    {
-      origin: currentPosition,
-      destination: destinationAddress,
-      travelMode: google.maps.TravelMode.WALKING,
-    },
-    function (response, status) {
-      if (status === "OK") {
-        directionsRenderer.setDirections(response);
-
-        // distance and duration values
-        const route = response.routes[0];
-        const leg = route.legs[0];
-        const distance = leg.distance.text;
-        const duration = leg.duration.text;
-
-        console.log("Distance: " + distance);
-        console.log("Duration: " + duration);
-      } else {
-        alert("Directions request failed due to " + status);
-      }
-    }
-  );
-}
-
 function handleLocationError(browserHasGeolocation, pos) {
   //handles errors related to geolocation.
   //if geolocation is not supported by the browser or if the Geolocation service fails, it alerts the user.
