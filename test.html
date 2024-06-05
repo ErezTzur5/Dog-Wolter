@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SweetAlert2 Friendly Toast</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      .swal2-popup {
+        font-size: 1.2rem; /* Increase font size for readability */
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showToast()">Show Friendly Toast</button>
+
+    <script>
+      function showToast() {
+        Swal.fire({
+          toast: true,
+          position: "top",
+          showConfirmButton: false,
+          timer: 1000,
+          timerProgressBar: true,
+          icon: "success",
+          title: "Your toast message",
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+            toast.addEventListener("click", () => Swal.close());
+            // toast.style.backgroundColor = "green"; < // not looking good
+          },
+          willClose: (toast) => {
+            toast.style.transition = "opacity 20s"; // Fade out over 10 seconds
+            setTimeout(() => {
+              toast.style.opacity = "0"; // Set opacity to 0 after 10 seconds
+            }, 20000); // Delay the fade-out effect by 10 seconds
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

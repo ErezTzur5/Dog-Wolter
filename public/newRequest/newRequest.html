@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps Example</title>
+    <style>
+      #map {
+        height: 400px;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="address" type="textbox" placeholder="Enter an address" />
+    <button id="submit">Geocode</button>
+    <button id="current-location">Use My Current Location</button>
+    <button id="navigate">Navigate</button>
+    <div id="map"></div>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
+    ></script>
+
+    <script src="./newRequest.js"></script>
+  </body>
+</html>
