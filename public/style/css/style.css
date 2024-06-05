@@ -203,6 +203,7 @@ select option:hover {
   background-repeat: no-repeat;
   position: relative;
   left: 45%;
+  cursor: pointer;
 }
 
 .save-btn{
@@ -215,6 +216,7 @@ select option:hover {
   background-repeat: no-repeat;
   position: relative;
   left: 45%;
+  cursor: pointer;
 }
 
 
