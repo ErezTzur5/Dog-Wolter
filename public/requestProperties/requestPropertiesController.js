@@ -92,7 +92,7 @@ async function onClickShowDogwalkerButton(svgElement) {
       propetries.phone,
       propetries.address,
       propetries.description,
-      propetries.rating
+      calculateAverageRating(propetries.rating)
     );
   } catch (e) {
     // error message
