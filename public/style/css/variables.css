@@ -3,8 +3,9 @@
   --clr-text-primary: #333333;
   --clr-text-light: #ffffff;
   --clr-accent-primary: #4a90e2;
-  --clr-danger-400: #dd9221;
-  --clr-danger-700: #be770c;
+  --clr-danger-400: #ffa51f;
+  --clr-danger-700: #ffb039;
+  --clr-background-800: #4d4c4c;
   --content-spacing-xs: 0.25em;
   --content-spacing-small: 0.5em;
   --content-spacing-medium-small: 0.75em;

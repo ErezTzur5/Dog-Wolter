@@ -1,4 +1,5 @@
-const dataURL = "http://localhost:8001";
+const URL = "http://localhost:8001";
+let autocomplete;
 
 function setDefaultTime() {
   const now = new Date();
@@ -8,7 +9,19 @@ function setDefaultTime() {
   document.getElementById("time").value = currentTime;
 }
 
-window.onload = setDefaultTime;
+window.onload = function () {
+  setDefaultTime();
+  initAutocomplete();
+};
+
+function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById("current-location"),
+    {
+      types: ["geocode"],
+    }
+  );
+}
 
 document
   .getElementById("createNewRequest")

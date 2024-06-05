@@ -5,9 +5,6 @@ let directionsRenderer;
 let currentPosition;
 
 function initMap() {
-  //initializes the Google Map, sets up geocoding, directions service, and renderer.
-  //it also sets the initial map center to the user's current position if available.
-
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 32.08732603245494, lng: 34.80405370566349 },
     zoom: 17,
@@ -24,7 +21,7 @@ function initMap() {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-        console.log(currentPosition);
+
         map.setCenter(currentPosition);
         new google.maps.Marker({
           map: map,
@@ -39,6 +36,27 @@ function initMap() {
   } else {
     handleLocationError(false, map.getCenter());
   }
+
+  const input = document.getElementById("address");
+  const autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo("bounds", map);
+
+  autocomplete.addListener("place_changed", function () {
+    const place = autocomplete.getPlace();
+
+    if (!place.geometry) {
+      console.log("No details available for input: '" + place.name + "'");
+      return;
+    }
+
+    map.setCenter(place.geometry.location);
+    new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+    });
+
+    console.log("Selected Place: ", place);
+  });
 
   document.getElementById("submit").addEventListener("click", function () {
     geocodeAddress(geocoder, map);
@@ -78,7 +96,7 @@ function initMap() {
 
 function loadGoogleMapsAPI() {
   return axios.get(
-    "https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap",
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&libraries=places&callback=initMap",
     { timeout: 5000 }
   );
 }
@@ -87,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
   loadGoogleMapsAPI()
     .then((response) => {
       console.log("Google Maps API loaded successfully");
-
       initMap();
     })
     .catch((error) => {
@@ -96,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function geocodeAddress(geocoder, resultsMap) {
-  //converts an address to geographic coordinates (latitude and longitude) and adds a marker to the map at that location.
   const address = document.getElementById("address").value;
   geocoder.geocode({ address: address }, function (results, status) {
     if (status === "OK") {
@@ -113,8 +129,6 @@ function geocodeAddress(geocoder, resultsMap) {
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-  //calculates and displays a walking route between the user's current position and a destination address specified by the user.
-  //it also displays the distance and duration of the route.
   const destinationAddress = document.getElementById("address").value;
   if (!currentPosition) {
     alert(
@@ -133,7 +147,6 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
       if (status === "OK") {
         directionsRenderer.setDirections(response);
 
-        // distance and duration values
         const route = response.routes[0];
         const leg = route.legs[0];
         const distance = leg.distance.text;
@@ -149,8 +162,6 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 }
 
 function handleLocationError(browserHasGeolocation, pos) {
-  //handles errors related to geolocation.
-  //if geolocation is not supported by the browser or if the Geolocation service fails, it alerts the user.
   map.setCenter(pos);
   alert(
     browserHasGeolocation

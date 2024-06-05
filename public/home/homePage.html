@@ -24,12 +24,18 @@
             </a>
           </li>
           <li class="nav-links">
-            <a class="current-page" href="homePage.html">Home</a>
-            <a href="../newRequest/newRequest.html">Get a DogWolter</a>
-            <a href="../profile/profile.html">Profile</a>
+            <div class="links-list-element">
+              <a class="current-page" href="homePage.html">Home</a>
+            </div>
+            <div class="links-list-element">
+              <a href="../newRequest/newRequest.html">Get a DogWolter</a>
+            </div>
+            <div class="links-list-element">
+              <a href="../profile/profile.html">Profile</a>
+            </div>
           </li>
           <li class="login">
-            <a href="homePage.html">Login</a>
+            <div class="links-list-element"><a href="login.html">Login</a></div>
           </li>
         </ul>
       </nav>
@@ -51,10 +57,11 @@
         <h2 class="heading">Easy to Submit a Request!</h2>
         <p>
           Simply
-          <a href="../newRequest/newRequest.html">apply for a DogWolter</a>,
-          enter your place,the time of the walk and how long you want the walk
-          to be, and our available DogWolters in your area will take care of
-          your fluffy friend
+          <a class="paragraph-link" href="../newRequest/newRequest.html"
+            >apply for a DogWolter</a
+          >, enter your place,the time of the walk and how long you want the
+          walk to be, and our available DogWolters in your area will take care
+          of your fluffy friend
         </p>
       </div>
 
@@ -121,21 +128,25 @@
         >
           Or
         </h3>
-        <button class="cta-button">Become a DogWolter</button>
+        <button class="cta-button">
+          <a href="../newRequest/newRequest.html">Become a DogWolter</a>
+        </button>
       </div>
     </main>
 
     <footer class="footer">
       <div class="margin-inline-general">
         <p>&copy; 2024 DogWolter. All rights reserved.</p>
-        <p>
-          Contact us at:
-          <a href="mailto:example@example.com">example@example.com</a>
-        </p>
-        <p>
-          Follow us on: <a href="#">Facebook</a> | <a href="#">Twitter</a> |
-          <a href="#">Instagram</a>
-        </p>
+        <div class="footer-social-media">
+          <p>
+            Contact us at:
+            <a href="mailto:example@example.com">example@example.com</a>
+          </p>
+          <p>
+            Follow us on: <a href="#">Facebook</a> | <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+          </p>
+        </div>
         <p>Built by Netanel Cohen, Erez Tzur, Yuval Maderer, Yonathan Bukris</p>
       </div>
     </footer>
