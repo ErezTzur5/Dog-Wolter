@@ -45,10 +45,25 @@
 
       <form action="" id="createNewRequest">
         <input type="text" name="" id="" placeholder="Current Location" />
-        <input type="" name="" id="" placeholder="Walk Duration" />
-        <input type="text" name="" id="" placeholder="When" />
+        <select id="time-duration" name="time-duration">
+          <option value="5">5 minutes</option>
+          <option value="10">10 minutes</option>
+          <option value="15">15 minutes</option>
+          <option value="20" selected>20 minutes</option>
+          <option value="25">25 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="35">35 minutes</option>
+          <option value="40">40 minutes</option>
+          <option value="45">45 minutes</option>
+          <option value="50">50 minutes</option>
+          <option value="55">55 minutes</option>
+          <option value="60">60 minutes</option>
+        </select>
+        <input type="time" name="" id="time" placeholder="When" />
         <button onclick="createNewRequest()">Search</button>
       </form>
     </main>
+
+    <script src="./newRequest.js"></script>
   </body>
 </html>
