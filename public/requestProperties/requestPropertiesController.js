@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   <h3 class = "dog-walker-request-time">When you want the DogWolter:</h3>
   <p class = "dog-walker-request-data">${data.currentTime}</p>
   <h3 class = "trip-duration"> Trip Duration:</h3>
-  <p class = "trip-duration-data"> ${data.timeDuration}</p>
+  <p class = "trip-duration-data"> ${data.timeDuration} minutes</p>
   <button class = "cta-button edit-request-btn" onclick="onClickEditButton(this)">edit your request</button>
   <button class = "cta-button delete-request-btn" onclick="onClickDeleteButton(this)">delete your request</button>
   `;
@@ -71,7 +71,8 @@ function onClickSaveButton(svgElement) {
 function onClickDeclineButton(svgElement) {
   try {
     const dogwalkerCard = svgElement.parentNode;
-    dogwalkerCard.remove();
+    const dogwalkerGrandparent = dogwalkerCard.parentNode;
+    dogwalkerGrandparent.remove();
     // success message
   } catch (e) {
     // error message
@@ -100,7 +101,9 @@ async function onClickShowDogwalkerButton(svgElement) {
 
 function onClickAcceptButton(svgElement) {
   const divElem = svgElement.parentNode;
-  const dogwalkerId = divElem.querySelector("#walker-id").textContent;
+  const divElemGrandparent = divElem.parentNode;
+  const dogwalkerId =
+    divElemGrandparent.querySelector("#walker-id").textContent;
   const params = new URLSearchParams(window.location.search);
   const requestId = params.get("id");
   const newUrl = `http://127.0.0.1:5500/public/onWalk/onWalk.html?id=${encodeURIComponent(
@@ -108,6 +111,17 @@ function onClickAcceptButton(svgElement) {
   )}&dogwalkerId=${encodeURIComponent(dogwalkerId)}`;
 
   window.location.href = newUrl;
+}
+
+function calculateAverageRating(dogWalker) {
+  const sum = dogWalker.reduce((acc, curr) => acc + curr, 0);
+  const average = sum / dogWalker.length;
+
+  console.log(average);
+  const fixAverage = parseFloat(average.toFixed(1));
+  console.log(fixAverage);
+
+  return fixAverage;
 }
 
 function addRandomDogWalkersToDom(URL, count) {
@@ -125,19 +139,30 @@ function addRandomDogWalkersToDom(URL, count) {
         const img = document.createElement("img");
         img.src = dogwalker.img;
         img.alt = "dogWalkerPhoto";
-        img.style.width = "70px";
-        img.style.height = "70px";
-        img.style.borderRadius = "50%";
-        img.style.cursor = "pointer";
+        img.classList.add("walker-image");
 
-        img.onclick = (function (currentDogwalker) {
+        const buttonsDiv = document.createElement("div");
+        buttonsDiv.classList.add("buttons-div");
+
+        const detailDiv = document.createElement("div");
+        detailDiv.classList.add("detail-div");
+
+        detailDiv.onclick = (function (currentDogwalker) {
           return function () {
             onClickShowDogwalkerButton(currentDogwalker);
           };
         })(dogwalker);
 
         const nameParagraph = document.createElement("p");
-        nameParagraph.textContent = "Name: " + dogwalker.name;
+        nameParagraph.classList.add("walker-name");
+        nameParagraph.textContent = dogwalker.name;
+
+        const ratingParagraph = document.createElement("p");
+        ratingParagraph.classList.add("walker-rating");
+        console.log(dogwalker.rating);
+        ratingParagraph.innerHTML = ` ${calculateAverageRating(
+          dogwalker.rating
+        )} <i class="rating-star fa-solid fa-star"></i>`;
 
         const idParagraph = document.createElement("p");
         idParagraph.textContent = dogwalker.id;
@@ -147,21 +172,28 @@ function addRandomDogWalkersToDom(URL, count) {
         const acceptButton = document.createElement("button");
         acceptButton.textContent = "Accept";
         acceptButton.setAttribute("id", "submit");
+        acceptButton.classList.add("walker-button");
+        acceptButton.classList.add("walker-accept-button");
         acceptButton.onclick = function () {
           onClickAcceptButton(this);
         };
 
         const declineButton = document.createElement("button");
         declineButton.textContent = "Decline";
+        declineButton.classList.add("walker-button");
+        declineButton.classList.add("walker-decline-button");
         declineButton.onclick = function () {
           onClickDeclineButton(this);
         };
 
-        dogwalkerCard.appendChild(img);
-        dogwalkerCard.appendChild(nameParagraph);
+        detailDiv.appendChild(img);
+        detailDiv.appendChild(nameParagraph);
+        detailDiv.appendChild(ratingParagraph);
         dogwalkerCard.appendChild(idParagraph);
-        dogwalkerCard.appendChild(acceptButton);
-        dogwalkerCard.appendChild(declineButton);
+        buttonsDiv.appendChild(acceptButton);
+        buttonsDiv.appendChild(declineButton);
+        dogwalkerCard.appendChild(detailDiv);
+        dogwalkerCard.appendChild(buttonsDiv);
 
         const delay = Math.floor(Math.random() * (6000 - 2000 + 1)) + 2000;
         setTimeout(() => {
