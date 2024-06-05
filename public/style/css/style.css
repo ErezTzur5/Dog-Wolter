@@ -284,6 +284,12 @@ body.swal2-shown > [aria-hidden="true"] {
   cursor: pointer;
 }
 
+
+@media screen and (min-width: 300px) {
+  .dog-card {
+    width: 70%;
+  }
+}
 @media screen and (min-width: 430px) {
   .nav-links {
     flex-direction: row;
@@ -376,6 +382,7 @@ body.swal2-shown > [aria-hidden="true"] {
   .swal2-html-container > * {
     font-size: 1.125rem;
   }
+
 }
 @media screen and (min-width: 750px) {
   .info-section {
