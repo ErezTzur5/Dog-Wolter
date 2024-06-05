@@ -36,18 +36,11 @@
     <main>
       <h1>Search for a dogwolter...</h1>
 
-      <img
-        src="../images/world-map-continents-oceans.webp"
-        width="500"
-        height="250"
-        alt="map"
-      />
-
       <form action="" id="createNewRequest">
         <input
           type="text"
           name=""
-          id=""
+          id="currentLocation"
           placeholder="Current Location"
           required
         />
@@ -70,6 +63,7 @@
       </form>
     </main>
 
-    <script type="module" src="./newRequest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./newRequest.js"></script>
   </body>
 </html>

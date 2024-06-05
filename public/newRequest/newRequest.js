@@ -1,3 +1,5 @@
+const URL = "http://localhost:8001";
+
 function setDefaultTime() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, "0");
@@ -14,10 +16,16 @@ document
     evn.preventDefault();
     const timeDurationEl = document.getElementById("time-duration").value;
     const currentTime = document.getElementById("time").value;
-    const currentLocation = document.getElementById("location").value;
+    const currentLocation = document.getElementById("currentLocation").value;
     const newRequest = {
       currentLocation: currentLocation,
       currentTime: currentTime,
       timeDuration: timeDurationEl,
     };
+    try {
+      axios.post(`${URL}/requests`, newRequest);
+      // surccess message
+    } catch (err) {
+      // error message
+    }
   });
