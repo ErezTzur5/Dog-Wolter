@@ -1,25 +1,22 @@
 {
   "dogWalkers": [
     {
-      "_id": 1,
-      "name": "John Doe",
-      "address": "123 Dizengoff St, Tel Aviv, Israel",
-      "img": "https://randomuser.me/api/portraits/men/1.jpg",
-      "description": "Software developer with 5 years of experience in web development. Loves spending time with my Golden Retriever.",
-      "rating": 4.5,
-      "id": "ec5e"
+        "name": "Walter White",
+        "address": "123 Dizengoff St, Tel Aviv, Israel",
+        "img": "https://static.wikia.nocookie.net/breakingbad/images/b/b4/Walter_2008.png/revision/latest/scale-to-width/360?cb=20200704164147",
+        "description": "High school chemistry teacher turned methamphetamine manufacturer. Loves spending time with his dog.",
+        "rating": 5.0,  
+        "id": "ec5e"  
     },
     {
-      "_id": 2,
-      "name": "Jane Smith",
-      "address": "456 Rothschild Blvd, Tel Aviv, Israel",
-      "img": "https://randomuser.me/api/portraits/women/2.jpg",
-      "description": "Graphic designer and illustrator with a passion for creating visually appealing designs. Enjoys walking my Dachshund.",
-      "rating": 4.8,
-      "id": "9af2"
+        "name": "Johnny Sins",
+        "address": "456 Rothschild Blvd, Tel Aviv, Israel",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Guy%2C_Ava_Lauren_at_XRCO_Awards_2007_1_%28cropped%29.jpg",
+        "description": "Popular social media personality and actor. Enjoys spending time with his dogs and creating engaging content.",
+        "rating": 4.8,
+        "id": "9af2"
     },
     {
-      "_id": 3,
       "name": "Alice Johnson",
       "address": "789 Ibn Gabirol St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -28,7 +25,6 @@
       "id": "3f2f"
     },
     {
-      "_id": 4,
       "name": "Bob Brown",
       "address": "321 Allenby St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/men/4.jpg",
@@ -37,7 +33,6 @@
       "id": "7430"
     },
     {
-      "_id": 5,
       "name": "Cathy White",
       "address": "654 Florentin St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/women/5.jpg",
@@ -46,7 +41,6 @@
       "id": "5432"
     },
     {
-      "_id": 6,
       "name": "David Black",
       "address": "987 Ben Yehuda St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/men/6.jpg",
@@ -55,7 +49,6 @@
       "id": "9f42"
     },
     {
-      "_id": 7,
       "name": "Emily Green",
       "address": "159 Hayarkon St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/women/7.jpg",
@@ -64,7 +57,6 @@
       "id": "2081"
     },
     {
-      "_id": 8,
       "name": "Frank Blue",
       "address": "753 Shenkin St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/men/8.jpg",
@@ -73,7 +65,6 @@
       "id": "fa14"
     },
     {
-      "_id": 9,
       "name": "Grace Yellow",
       "address": "852 Jaffa St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/women/9.jpg",
@@ -82,7 +73,6 @@
       "id": "6efc"
     },
     {
-      "_id": 10,
       "name": "Henry Violet",
       "address": "951 Carmel Market St, Tel Aviv, Israel",
       "img": "https://randomuser.me/api/portraits/men/10.jpg",
@@ -114,6 +104,36 @@
       "id": "008c",
       "currentLocation": "asdads",
       "currentTime": "11:32",
+      "timeDuration": "20"
+    },
+    {
+      "id": "8360",
+      "currentLocation": "adsdasasd",
+      "currentTime": "11:40",
+      "timeDuration": "20"
+    },
+    {
+      "id": "7e4f",
+      "currentLocation": "afdsfsdv",
+      "currentTime": "11:43",
+      "timeDuration": "20"
+    },
+    {
+      "id": "13b4",
+      "currentLocation": "asdads",
+      "currentTime": "11:57",
+      "timeDuration": "20"
+    },
+    {
+      "id": "c452",
+      "currentLocation": "jvhvjhgjhkh",
+      "currentTime": "11:58",
+      "timeDuration": "20"
+    },
+    {
+      "id": "cee1",
+      "currentLocation": "qsdsadasdas",
+      "currentTime": "12:03",
       "timeDuration": "20"
     }
   ]
