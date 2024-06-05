@@ -405,6 +405,34 @@ body.swal2-shown > [aria-hidden="true"] {
   color: yellow;
 }
 
+.gif-dog-run {
+  position: absolute;
+  left: 7%;
+  top: 32%;
+  width: 300px;
+  height: 200px;
+  background-image: url("../images/after-effects-running.gif");
+  background-size: cover;
+  background-position: center;
+}
+
+.gif-dog-cute {
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  width: 300px;
+  height: 200px;
+  background-image: url("../images/WolfWildNew.gif");
+  background-size: cover;
+  background-position: center;
+  transform: scaleX(-1); /* This flips the image horizontally */
+}
+
+@media screen and (min-width: 300px) {
+  .dog-card {
+    width: 300px;
+  }
+}
 @media screen and (min-width: 430px) {
   .nav-links {
     flex-direction: row;
@@ -415,10 +443,16 @@ body.swal2-shown > [aria-hidden="true"] {
   .current-page {
     font-weight: bold;
   }
+  .dog-card {
+    width: 400px;
+  }
 }
 @media all and (min-width: 600px) {
   body {
     font-size: 16px;
+  }
+  .dog-card {
+    width: 450px;
   }
   .mainSection {
     margin-top: 90px;
@@ -519,6 +553,9 @@ body.swal2-shown > [aria-hidden="true"] {
   .request-content-wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+  }
+  .dog-card {
+    width: 500px;
   }
 }
 
