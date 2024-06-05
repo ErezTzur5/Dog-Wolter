@@ -191,6 +191,8 @@ body.swal2-shown > [aria-hidden="true"] {
 }
 .dog-walker-detail-wrapper {
   margin-top: var(--content-spacing-medium);
+  width: var(--content-width-general);
+  justify-self: center;
 }
 .walker-rating {
   width: 100%;
@@ -249,6 +251,9 @@ body.swal2-shown > [aria-hidden="true"] {
 .request-detail-wrapper {
   background-color: var(--clr-background-800);
   border-radius: 6px;
+  padding-block: var(--content-spacing-large);
+  width: var(--content-width-general);
+  justify-self: center;
 }
 .request-detail-wrapper h3 {
   color: var(--clr-danger-400);
@@ -529,4 +534,9 @@ body.swal2-shown > [aria-hidden="true"] {
 body.swal2-shown > [aria-hidden="true"] {
   transition: 0.1s filter;
   filter: blur(3px);
+}
+@media screen and (min-width: 940px) {
+  .request-detail-wrapper {
+    height: 350px;
+  }
 }
