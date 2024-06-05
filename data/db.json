@@ -301,6 +301,12 @@
       "currentLocation": "Patai St 14, Giv'atayim, Israel",
       "currentTime": "23:00",
       "timeDuration": "20"
+    },
+    {
+      "id": "abe4",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "23:05",
+      "timeDuration": "20"
     }
   ]
 }
