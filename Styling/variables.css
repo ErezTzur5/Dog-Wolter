@@ -1,0 +1,13 @@
+:root {
+  --clr-background-primary: #yourValueHere;
+  --clr-accent-primary: #yourValueHere;
+  --clr-danger-primary: #yourValueHere;
+  --content-spacing-xs: 0.25em;
+  --content-spacing-small: 0.5em;
+  --content-spacing-medium-small: 0.75em;
+  --content-spacing-medium: 1em;
+  --content-spacing-medium-large: 1.25em;
+  --content-spacing-large: 1.5em;
+  --content-spacing-xl: 1.75em;
+  --content-spacing-xxl: 2em;
+}

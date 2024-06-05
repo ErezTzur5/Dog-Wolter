@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="time" id="localTime" name="localTime" />
+    <script>
+      // Function to set the default value of the time input to the current time
+      function setDefaultTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const currentTime = `${hours}:${minutes}`;
+        document.getElementById("localTime").value = currentTime;
+      }
+
+      // Call the function when the page loads
+      window.onload = setDefaultTime;
+
+      document
+        .getElementById("timeForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const localTimeInput = document.getElementById("localTime").value;
+          if (localTimeInput) {
+            const now = new Date();
+            const [hours, minutes] = localTimeInput.split(":").map(Number);
+            const localTime = new Date(
+              now.getFullYear(),
+              now.getMonth(),
+              now.getDate(),
+              hours,
+              minutes
+            );
+            const utcTime = new Date(
+              localTime.getTime() + localTime.getTimezoneOffset() * 60000
+            );
+
+            console.log("Local Time:", localTime);
+            console.log("UTC Time:", utcTime);
+
+            // Send the time data to your server if needed
+            fetch("/submit-time", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                localTime: localTime.toTimeString().slice(0, 5),
+                utcTime: utcTime.toTimeString().slice(0, 5),
+              }),
+            })
+              .then((response) => response.json())
+              .then((data) => console.log(data))
+              .catch((error) => console.error("Error:", error));
+          } else {
+            console.log("No time selected");
+          }
+        });
+    </script>
+  </body>
+</html>
