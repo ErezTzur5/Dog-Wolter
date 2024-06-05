@@ -33,12 +33,6 @@
     </header>
 
     <main>
-      <script
-        async
-        defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
-      ></script>
-
       <h1>Search for a dogwolter...</h1>
       <input id="address" type="textbox" placeholder="Enter an address" />
       <button id="submit">Geocode</button>
@@ -73,6 +67,11 @@
       </form>
     </main>
 
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./newRequest.js"></script>
     <script src="./googleService.js"></script>
