@@ -40,7 +40,7 @@ body {
 .nav-links {
   display: flex;
   flex-direction: column;
-  width: 130px;
+  width: 135px;
   margin-bottom: var(--content-spacing-xs);
   gap: 1vh;
 }
