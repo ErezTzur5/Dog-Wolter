@@ -193,6 +193,72 @@
       "currentLocation": "Poland",
       "currentTime": "17:45",
       "timeDuration": "20"
+    },
+    {
+      "id": "0624",
+      "currentLocation": "France",
+      "currentTime": "17:54",
+      "timeDuration": "20"
+    },
+    {
+      "id": "7d53",
+      "currentLocation": "France",
+      "currentTime": "18:05",
+      "timeDuration": "20"
+    },
+    {
+      "id": "612b",
+      "currentLocation": "Bialik Street, Ramat Gan, Israel",
+      "currentTime": "18:06",
+      "timeDuration": "20"
+    },
+    {
+      "id": "40d2",
+      "currentLocation": "123",
+      "currentTime": "18:17",
+      "timeDuration": "20"
+    },
+    {
+      "id": "904a",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "18:22",
+      "timeDuration": "20"
+    },
+    {
+      "id": "93a3",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "18:24",
+      "timeDuration": "20"
+    },
+    {
+      "id": "8a17",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "18:25",
+      "timeDuration": "20"
+    },
+    {
+      "id": "492e",
+      "currentLocation": "123",
+      "currentTime": "18:25",
+      "timeDuration": "20"
+    },
+    {
+      "id": "ad8a",
+      "currentLocation": "123",
+      "currentTime": "18:30",
+      "timeDuration": "20"
+    },
+    {
+      "id": "2cf9",
+      "currentLocation": "1",
+      "currentTime": "18:35",
+      "timeDuration": "20"
+    },
+    {
+      "id": "687e",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "18:35",
+      "timeDuration": "20"
     }
   ]
 }
