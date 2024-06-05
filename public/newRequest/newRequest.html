@@ -44,8 +44,14 @@
       />
 
       <form action="" id="createNewRequest">
-        <input type="text" name="" id="" placeholder="Current Location" />
-        <select id="time-duration" name="time-duration">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Current Location"
+          required
+        />
+        <select id="time-duration" name="time-duration" required>
           <option value="5">5 minutes</option>
           <option value="10">10 minutes</option>
           <option value="15">15 minutes</option>
@@ -59,11 +65,11 @@
           <option value="55">55 minutes</option>
           <option value="60">60 minutes</option>
         </select>
-        <input type="time" name="" id="time" placeholder="When" />
-        <button onclick="createNewRequest()">Search</button>
+        <input type="time" name="" id="time" placeholder="When" required />
+        <button type="submit">Search</button>
       </form>
     </main>
 
-    <script src="./newRequest.js"></script>
+    <script type="module" src="./newRequest.js"></script>
   </body>
 </html>
