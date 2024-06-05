@@ -73,8 +73,12 @@ function saveProfile(svgElement) {
   try {
     const divElem = svgElement.parentNode.parentNode;
     const inputs = divElem.querySelectorAll("input");
-    inputs.forEach((input) => {
+    inputs.forEach((input, index) => {
       const p = document.createElement("p");
+      if (index === 0) {
+        p.classList.add("dog-name");
+        p.setAttribute("id", "dogCard");
+      }
       p.textContent = input.value;
       input.replaceWith(p);
     });
