@@ -18,11 +18,8 @@
 .paragraph-link {
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  transition: transform 0.3s;
   display: inline-block;
-}
-.paragraph-link:hover {
-  transform: scale(1.03);
+  font-weight: bold;
 }
 
 .info-section-wrapper {
@@ -135,7 +132,76 @@ select option:checked {
 select option:hover {
   background-color: rgb(17, 17, 9); /* Change to desired color */
 }
+.test-class {
+  color: red;
+}
+.swal2-popup {
+  background-color: var(--clr-background-800);
+  color: var(--clr-text-light);
+}
+.popup-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+.popup-header {
+  color: var(--clr-danger-400);
+}
+.popup-phone-number b,
+.popup-address b,
+.popup-description b,
+.popup-rating b {
+  color: var(--clr-danger-400);
+}
+.hidden {
+  display: none;
+}
+.swal2-html-container > * {
+  margin-bottom: var(--content-spacing-medium) !important;
+  font-size: 1rem;
+}
+.swal2-html-container > p {
+  text-align: left;
+}
 
+.swal2-confirm {
+  background-color: var(--clr-danger-700) !important;
+  padding: var(--content-spacing-medium);
+  margin-block: var(--content-spacing-small);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.swal2-confirm:hover {
+  animation: change-color 0.3s forwards;
+  transform: translateY(-4px);
+}
+.swal2-styled:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.swal2-confirm:focus,
+.swal2-cancel:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.1s filter;
+  filter: blur(3px);
+}
+
+.walker-info-card {
+  width: 70%;
+}
+.dog-walker-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+.request-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 /*//////////////////////////////////////////// PROFILE.CSS ////////////////////////////////////////////////////*/
 
@@ -153,7 +219,7 @@ select option:hover {
   gap: 0.3rem;
 }
 
-.dog-img{
+.dog-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -175,51 +241,46 @@ select option:hover {
   padding: 15px;
   border: 2px solid #ccc;
   border-radius: 10px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
   resize: vertical;
   transition: border-color 0.3s, box-shadow 0.3s;
   margin-top: 3px;
 }
 
-.dog-card input:focus{
+.dog-card input:focus {
   border-color: #ffa51f;
   box-shadow: 0 0 10px rgba(255, 165, 31, 0.5);
   outline: none;
 }
-
 
 .dog-name {
   font-size: 2.5rem;
   font-weight: 400;
 }
 
-.edit-btn{
+.edit-btn {
   background-image: url(../../profile/icons/edit.svg);
   height: 40px;
   width: 40px;
   background-color: rgba(0, 0, 0, 0);
-  border:none;
+  border: none;
   background-repeat: no-repeat;
   position: relative;
   left: 45%;
 }
 
-.save-btn{
+.save-btn {
   display: none;
   background-image: url(../../profile/icons/save.svg);
   height: 40px;
   width: 40px;
   background-color: rgba(0, 0, 0, 0);
-  border:none;
+  border: none;
   background-repeat: no-repeat;
   position: relative;
   left: 45%;
 }
-
-
-
-
 
 @media screen and (min-width: 430px) {
   .nav-links {
@@ -310,6 +371,9 @@ select option:hover {
     justify-content: center;
     gap: 40px;
   }
+  .swal2-html-container > * {
+    font-size: 1.125rem;
+  }
 }
 @media screen and (min-width: 750px) {
   .info-section {
@@ -317,7 +381,7 @@ select option:hover {
   }
   .info-card {
     width: calc((100% - 3vh - 1em - 50px) / 3);
-    line-height: 23pt;
+    line-height: 23pt;
   }
   .request-content-wrapper {
     grid-template-columns: 1fr 1fr;
@@ -329,7 +393,7 @@ select option:hover {
   display: none;
 }
 
-body.swal2-shown > [aria-hidden='true'] {
+body.swal2-shown > [aria-hidden="true"] {
   transition: 0.1s filter;
   filter: blur(3px);
 }

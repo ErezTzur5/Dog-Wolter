@@ -3,8 +3,9 @@
   --clr-text-primary: #333333;
   --clr-text-light: #ffffff;
   --clr-accent-primary: rgb(39, 40, 41);
-  --clr-danger-400: rgb(255, 165, 31);
-  --clr-danger-700: #ffb039;
+  --clr-danger-300: #ffb039;
+  --clr-danger-400: #ffa51f;
+  --clr-danger-700: hsl(36, 100%, 51%);
   --clr-background-800: hsl(210, 3%, 36%);
   --content-spacing-xs: 0.25em;
   --content-spacing-small: 0.5em;
@@ -15,5 +16,5 @@
   --content-spacing-xl: 1.75em;
   --content-spacing-xxl: 2em;
   --content-width-general: min(1175px, 100% - 4rem);
-  --text-shadow:4px 5px 6px rgba(0, 0, 0, 0.23);
+  --text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.23);
 }

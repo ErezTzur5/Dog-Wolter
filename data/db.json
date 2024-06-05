@@ -283,6 +283,42 @@
       "currentTime": "20:52",
       "timeDuration": " 67",
       "id": "2442"
+    },
+    {
+      "id": "5910",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "21:46",
+      "timeDuration": "20"
+    },
+    {
+      "id": "4585",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "22:43",
+      "timeDuration": "20"
+    },
+    {
+      "id": "a467",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "22:43",
+      "timeDuration": "20"
+    },
+    {
+      "id": "b519",
+      "currentLocation": "Migdal HaEmek, Israel",
+      "currentTime": "22:44",
+      "timeDuration": "20"
+    },
+    {
+      "id": "a7df",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "22:48",
+      "timeDuration": "20"
+    },
+    {
+      "id": "e382",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "22:59",
+      "timeDuration": "20"
     }
   ]
 }
