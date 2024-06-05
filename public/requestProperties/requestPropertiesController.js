@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", async function () {
   const data = await addRequestToDom(dataURL, requestId);
   const propertiesDiv = document.getElementById("requestProperties");
   propertiesDiv.innerHTML = `
-  <h3>your location:</h3>
-  <p>${data.currentLocation}</p>
-  <h3>when you want the dogwolter:</h3>
-  <p>${data.currentTime}</p>
-  <h3>duration trip time:</h3>
-  <p> ${data.timeDuration}</p>
-  <button onclick="onClickEditButton(this)">edit your request</button>
-  <button onclick="onClickDeleteButton(this)">delete your request</button>
+  <h3 class = "user-location">your location:</h3>
+  <p class = "user-location-data">${data.currentLocation}</p>
+  <h3 class = "dog-walker-request-time">When you want the DogWolter:</h3>
+  <p class = "dog-walker-request-data">${data.currentTime}</p>
+  <h3 class = "trip-duration"> Trip Duration:</h3>
+  <p class = "trip-duration-data"> ${data.timeDuration}</p>
+  <button class = "cta-button edit-request-btn" onclick="onClickEditButton(this)">edit your request</button>
+  <button class = "cta-button delete-request-btn" onclick="onClickDeleteButton(this)">delete your request</button>
   `;
 });
 

@@ -14,33 +14,34 @@
             <a href="../home/homePage.html">
               <img
                 class="dog-wolter-navbar-logo"
-                src="../style/images/OIG2.png"
+                src="../style/images/Website-logo.png"
                 alt="DogWolter Logo"
               />
             </a>
           </li>
           <li class="nav-links">
-            <a href="../home/homePage.html">Home</a>
-            <a class="current-page" href="../newRequest/newRequest.html"
-              >Get a DogWolter</a
-            >
-            <a href="../profile/profile.html">Profile</a>
+            <div class="links-list-element">
+              <a href="../home/homePage.html">Home</a>
+            </div>
+            <div class="links-list-element">
+              <a href="../newRequest/newRequest.html">Get a DogWolter</a>
+            </div>
+            <div class="links-list-element">
+              <a class="current-page" href="profile.html">Profile</a>
+            </div>
           </li>
           <li class="login">
-            <a href="login.html">Login</a>
+            <div class="links-list-element"><a href="login.html">Login</a></div>
           </li>
         </ul>
       </nav>
     </header>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
 
-    <div id="map" style="height: 300px; width: 40%; border-radius: 8px"></div>
-    <h1>Your dogwalker is on their way...</h1>
-    <div id="timeUntilArrival"></div>
+    <main class="mainSection">
+      <div id="map" style="height: 300px; width: 40%; border-radius: 8px"></div>
+      <h1>Your dogwalker is on their way...</h1>
+      <div id="timeUntilArrival"></div>
+    </main>
 
     <script type="module" src="./onWalk.js"></script>
     <script src="../newRequest/googleService.js"></script>

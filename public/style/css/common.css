@@ -8,6 +8,7 @@ body {
   color: var(--clr-accent-primary);
   padding-bottom: var(--content-spacing-small);
   line-height: 1.2;
+  text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.23);
 }
 .heading-block-spacing {
   padding-block: var(--content-spacing-small);
@@ -136,7 +137,6 @@ body {
   border-radius: 6px;
   padding: var(--content-spacing-medium);
   margin-block: var(--content-spacing-small);
-  /* margin-inline: auto; */
   cursor: pointer;
   transition: transform 0.3s ease;
 }

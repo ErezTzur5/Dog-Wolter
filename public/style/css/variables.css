@@ -3,8 +3,9 @@
   --clr-text-primary: #333333;
   --clr-text-light: #ffffff;
   --clr-accent-primary: rgb(39, 40, 41);
+  --clr-danger-300: #ffb039;
   --clr-danger-400: #ffa51f;
-  --clr-danger-700: #ffb039;
+  --clr-danger-700: hsl(36, 100%, 51%);
   --clr-background-800: hsl(210, 3%, 36%);
   --content-spacing-xs: 0.25em;
   --content-spacing-small: 0.5em;

@@ -13,54 +13,73 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="navbar-wrapper">
         <ul class="navbar">
           <li class="logo">
             <a href="../home/homePage.html">
               <img
                 class="dog-wolter-navbar-logo"
-                src="../style/images/OIG2.png"
+                src="../style/images/Website-logo.png"
                 alt="DogWolter Logo"
               />
             </a>
           </li>
           <li class="nav-links">
-            <a href="../home/homePage.html">Home</a>
-            <a class="current-page" href="../newRequest/newRequest.html"
-              >Submit new request</a
-            >
-            <a href="../home/homePage.html">Profile</a>
+            <div class="links-list-element">
+              <a class="current-page" href="../home/homePage.html">Home</a>
+            </div>
+            <div class="links-list-element">
+              <a href="../newRequest/newRequest.html">Get a DogWolter</a>
+            </div>
+            <div class="links-list-element">
+              <a href="../profile/profile.html">Profile</a>
+            </div>
           </li>
           <li class="login">
-            <a href="login.html">Login</a>
+            <div class="links-list-element"><a href="login.html">Login</a></div>
           </li>
         </ul>
       </nav>
     </header>
 
-    <div id="requestProperties">
-      <!-- <p>your location: </p>
-      <p>when you want the dogwolter: </p>
-      <p>duration trip time: </p> -->
-      <!-- <button onclick="editRequest()">edit your request</button>
-      <button onclick="deleteRequest()">delete your request</button> -->
-    </div>
-
-    <div id="availableDogwalkers">
-      <h2>Available Dogwalkers</h2>
-      <div id="dogwalkerCard">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Guy%2C_Ava_Lauren_at_XRCO_Awards_2007_1_%28cropped%29.jpg"
-          alt="dogWalkerPhoto"
-          style="width: 70px; height: 70px; border-radius: 50%; cursor: pointer"
-          onclick="onClickShowDogwalkerButton(this)"
-        />
-        <p>Name: Yuval</p>
-        <p id="walker-id" class="hidden">ec5e</p>
-        <button onclick="onClickAcceptButton(this)">Accept</button>
-        <button onclick="onClickDeclineButton(this)">Decline</button>
+    <main class="request-detail-grid mainSection">
+      <div class="request-detail-wrapper">
+        <div class="margin-inline-general" id="requestProperties">
+          <!-- <p>your location: </p>
+          <p>when you want the dogwolter: </p>
+          <p>duration trip time: </p> -->
+          <!-- <button onclick="editRequest()">edit your request</button>
+          <button onclick="deleteRequest()">delete your request</button> -->
+        </div>
       </div>
-    </div>
+      <div class="dog-walker-detail-wrapper">
+        <div class="margin-inline-general" id="availableDogwalkers">
+          <h2>Available DogWolters</h2>
+          <div class="walker-info-card" id="dogwalkerCard">
+            <img
+              class="dog-walker-photo"
+              src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Guy%2C_Ava_Lauren_at_XRCO_Awards_2007_1_%28cropped%29.jpg"
+              alt="dogWalkerPhoto"
+              onclick="onClickShowDogwalkerButton(this)"
+            />
+            <p class="dog-walker-name">Name: Yuval</p>
+            <p id="walker-id" class="hidden">ec5e</p>
+            <button
+              class="walker-accept-button"
+              onclick="onClickAcceptButton(this)"
+            >
+              Accept
+            </button>
+            <button
+              class="wlaker-decline-button"
+              onclick="onClickDeclineButton(this)"
+            >
+              Decline
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="./requestPropertiesController.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

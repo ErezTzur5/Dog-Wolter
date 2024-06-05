@@ -18,11 +18,8 @@
 .paragraph-link {
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  transition: transform 0.3s;
   display: inline-block;
-}
-.paragraph-link:hover {
-  transform: scale(1.03);
+  font-weight: bold;
 }
 
 .info-section-wrapper {
@@ -135,6 +132,89 @@ select option:checked {
 select option:hover {
   background-color: rgb(17, 17, 9); /* Change to desired color */
 }
+.test-class {
+  color: red;
+}
+.swal2-popup {
+  background-color: var(--clr-background-800);
+  color: var(--clr-text-light);
+}
+.popup-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+.popup-header {
+  color: var(--clr-danger-400);
+}
+.popup-phone-number b,
+.popup-address b,
+.popup-description b,
+.popup-rating b {
+  color: var(--clr-danger-400);
+}
+.hidden {
+  display: none;
+}
+.swal2-html-container > * {
+  margin-bottom: var(--content-spacing-medium) !important;
+  font-size: 1rem;
+}
+.swal2-html-container > p {
+  text-align: left;
+}
+
+.swal2-confirm {
+  background-color: var(--clr-danger-700) !important;
+  padding: var(--content-spacing-medium);
+  margin-block: var(--content-spacing-small);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.swal2-confirm:hover {
+  animation: change-color 0.3s forwards;
+  transform: translateY(-4px);
+}
+.swal2-styled:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.swal2-confirm:focus,
+.swal2-cancel:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.1s filter;
+  filter: blur(3px);
+}
+
+.walker-info-card {
+  width: 70%;
+}
+.dog-walker-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+.request-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*//////////////////////////////////////////// PROFILE.CSS ////////////////////////////////////////////////////*/
+
+.dog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-accent-primary);
+  border-radius: 8px;
+  width: 500px;
+  padding: 15px;
+}
 
 @media screen and (min-width: 430px) {
   .nav-links {
@@ -225,6 +305,9 @@ select option:hover {
     justify-content: center;
     gap: 40px;
   }
+  .swal2-html-container > * {
+    font-size: 1.125rem;
+  }
 }
 @media screen and (min-width: 750px) {
   .info-section {
@@ -232,33 +315,10 @@ select option:hover {
   }
   .info-card {
     width: calc((100% - 3vh - 1em - 50px) / 3);
-    line-height: 23pt;
+    line-height: 23pt;
   }
   .request-content-wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
-}
-
-.hidden {
-  display: none;
-}
-
-body.swal2-shown > [aria-hidden='true'] {
-  transition: 0.1s filter;
-  filter: blur(3px);
-}
-
-
-/*//////////////////////////////////////////// PROFILE.CSS ////////////////////////////////////////////////////*/
-
-.dog-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--clr-accent-primary);
-  border-radius: 8px;
-  width: 500px;
-  padding: 15px
 }
