@@ -16,7 +16,7 @@ document
     evn.preventDefault();
     const timeDurationEl = document.getElementById("time-duration").value;
     const currentTime = document.getElementById("time").value;
-    const currentLocation = document.getElementById("currentLocation").value;
+    const currentLocation = document.getElementById("current-location").value;
     const newRequest = {
       currentLocation: currentLocation,
       currentTime: currentTime,
