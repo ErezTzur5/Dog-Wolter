@@ -155,52 +155,10 @@
       "timeDuration": "20"
     },
     {
-      "id": "5597",
+      "id": "279a",
       "currentLocation": "",
-      "currentTime": "13:33",
+      "currentTime": "13:37",
       "timeDuration": "20"
-    },
-    {
-      "id": "ebdd",
-      "currentLocation": "",
-      "currentTime": "13:33",
-      "timeDuration": "20"
-    },
-    {
-      "id": "b578",
-      "currentLocation": "",
-      "currentTime": "13:33",
-      "timeDuration": "20"
-    },
-    {
-      "id": "b5b1",
-      "currentLocation": "",
-      "currentTime": "13:34",
-      "timeDuration": "20"
-    },
-    {
-      "id": "9e97",
-      "currentLocation": "",
-      "currentTime": "13:35",
-      "timeDuration": "20"
-    },
-    {
-      "id": "4373",
-      "currentLocation": "asdda",
-      "currentTime": "13:36",
-      "timeDuration": "20"
-    },
-    {
-      "id": "cca1",
-      "currentLocation": "sdfsdfdf",
-      "currentTime": "13:44",
-      "timeDuration": "20"
-    },
-    {
-      "currentLocation": "dsfddsf",
-      "currentTime": "13:56",
-      "timeDuration": " 20",
-      "id": "f5c0"
     }
   ]
 }

@@ -78,21 +78,19 @@ function initMap() {
 
 function loadGoogleMapsAPI() {
   return axios.get(
-    "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap",
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyBzQ62BPJBOIsbVenJzMhUQQ2fIC8IZADs&callback=initMap",
     { timeout: 5000 }
-  ); // Adjust the timeout value as needed
+  );
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   loadGoogleMapsAPI()
     .then((response) => {
-      // Handle successful response
       console.log("Google Maps API loaded successfully");
-      // Call your initMap function to initialize the map
+
       initMap();
     })
     .catch((error) => {
-      // Handle error
       console.error("Error loading Google Maps API:", error);
     });
 });
