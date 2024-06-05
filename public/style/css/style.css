@@ -25,11 +25,13 @@ body {
   padding-left: 0px;
   margin-right: var(--content-spacing-medium);
 }
+
 .navbar li a {
   color: var(--clr-text-light);
 }
 .login {
   align-self: center;
+  border-bottom: 4px solid transparent;
 }
 .dog-wolter-navbar-logo {
   width: 50px;
@@ -44,9 +46,35 @@ body {
 }
 .nav-links a {
   margin-right: var(--content-spacing-small);
+  width: auto;
 }
 .current-page {
-  border-bottom: 4px solid var(--clr-danger-400);
+  position: relative;
+  font-weight: bold;
+}
+
+.current-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--clr-danger-400);
+  transform: scaleX(0);
+  transform-origin: bottom left; /* Start animation from left */
+  animation: underline-animation 0.4s forwards;
+}
+
+@keyframes underline-animation {
+  0% {
+    transform: scaleX(0);
+    transform-origin: bottom left; /* Ensure it starts from the left */
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: bottom left; /* Ensure it ends towards the right */
+  }
 }
 main {
   background-color: var(--clr-background-primary);
@@ -84,7 +112,7 @@ main {
   font-size: 1.7rem;
 }
 .info-section-wrapper {
-  background-color: var(--clr-text-primary);
+  background-color: var(--clr-background-800);
   color: white;
 }
 .info-section-wrapper .heading {
@@ -119,4 +147,12 @@ main {
 }
 .footer a {
   color: var(--clr-accent-primary);
+}
+@media screen and (min-width: 400px) {
+  .nav-links {
+    flex-direction: row;
+    width: auto;
+    gap: 10px;
+    margin-bottom: 0px;
+  }
 }
