@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   <button onclick="onClickEditButton(this)">edit your request</button>
   <button onclick="onClickDeleteButton(this)">delete your request</button>
   `;
+  const dogwalkersDataURL = "http://localhost:8001/dogWalkers";
+  addRandomDogWalkersToDom(dogwalkersDataURL, 3);
 });
 
 window.onload = onInit();
@@ -106,6 +108,75 @@ function onClickAcceptButton(svgElement) {
   )}&dogwalkerId=${encodeURIComponent(dogwalkerId)}`;
 
   window.location.href = newUrl;
+}
+
+function addRandomDogWalkersToDom(URL, count) {
+  const availableDogwalkersDiv = document.getElementById("availableDogwalkers");
+  axios
+    .get(URL)
+    .then((response) => {
+      const dogWalkers = response.data;
+      const randomDogWalkers = getRandomDogWalkers(dogWalkers, count);
+      randomDogWalkers.forEach((dogwalker) => {
+        const dogwalkerCard = document.createElement("div");
+        dogwalkerCard.classList.add("walker-info-card");
+        dogwalkerCard.setAttribute("id", "dogwalkerCard");
+
+        const img = document.createElement("img");
+        img.src = dogwalker.img;
+        img.alt = "dogWalkerPhoto";
+        img.style.width = "70px";
+        img.style.height = "70px";
+        img.style.borderRadius = "50%";
+        img.style.cursor = "pointer";
+
+        img.onclick = (function (currentDogwalker) {
+          return function () {
+            onClickShowDogwalkerButton(currentDogwalker);
+          };
+        })(dogwalker);
+
+        const nameParagraph = document.createElement("p");
+        nameParagraph.textContent = "Name: " + dogwalker.name;
+
+        const idParagraph = document.createElement("p");
+        idParagraph.textContent = dogwalker.id;
+        idParagraph.classList.add("hidden");
+        idParagraph.setAttribute("id", "walker-id");
+
+        const acceptButton = document.createElement("button");
+        acceptButton.textContent = "Accept";
+        acceptButton.setAttribute("id", "submit");
+        acceptButton.onclick = function () {
+          onClickAcceptButton(this);
+        };
+
+        const declineButton = document.createElement("button");
+        declineButton.textContent = "Decline";
+        declineButton.onclick = function () {
+          onClickDeclineButton(this);
+        };
+
+        dogwalkerCard.appendChild(img);
+        dogwalkerCard.appendChild(nameParagraph);
+        dogwalkerCard.appendChild(idParagraph);
+        dogwalkerCard.appendChild(acceptButton);
+        dogwalkerCard.appendChild(declineButton);
+
+        const delay = Math.floor(Math.random() * (6000 - 2000 + 1)) + 2000;
+        setTimeout(() => {
+          availableDogwalkersDiv.appendChild(dogwalkerCard);
+        }, delay);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching dog walkers:", error);
+    });
+}
+
+function getRandomDogWalkers(dogWalkers, count) {
+  const shuffled = dogWalkers.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
 }
 
 function onInit() {

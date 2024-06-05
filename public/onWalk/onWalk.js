@@ -70,7 +70,40 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 function displayTimeAndDuration() {
   const timeUntilArrivalDiv = document.getElementById("timeUntilArrival");
   timeUntilArrivalDiv.innerHTML = `
-  <p>Distance: ${distanceP}</p>
-  <p>Duration: ${durationP}</p>
+  <div id="distance">Distance remaining: ${
+    distanceP ? distanceP : "loading..."
+  }</div>
+  <div id="duration">Time remaining: ${
+    durationP ? durationP : "loading..."
+  }</div>
   `;
+  startCountdown(distanceP, durationP);
+}
+
+function startCountdown(distance, duration) {
+  const distanceDiv = document.getElementById("distance");
+  const durationDiv = document.getElementById("duration");
+  const dogwalkerStatus = document.querySelector("h1");
+  let totalDistance = parseFloat(distance.split(" ")[0]);
+  let totalTime = parseInt(duration.split(" ")[0]);
+
+  let distancePerSecond = totalDistance / totalTime;
+
+  let interval = setInterval(() => {
+    if (totalTime > 0) {
+      totalTime -= 1;
+      totalDistance -= distancePerSecond;
+
+      distanceDiv.innerText = `Distance remaining: ${totalDistance.toFixed(
+        1
+      )} km`;
+      durationDiv.innerText = `Time remaining: ${totalTime} mins`;
+    } else {
+      clearInterval(interval);
+      distanceDiv.classList.add("hidden");
+      durationDiv.classList.add("hidden");
+      dogwalkerStatus.innerText = "Your dogwolter has arrived!";
+      // Your dogwalker has arrived message
+    }
+  }, 1000);
 }

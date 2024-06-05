@@ -71,9 +71,8 @@ export function showToast(
   });
 }
 
-export function showDogwalkerProperties(svgElement) {
-  const dogwalkerCard = svgElement.parentNode;
-  const walkerId = dogwalkerCard.querySelector("#walker-id").textContent;
+export function showDogwalkerProperties(currentDogwalker) {
+  const walkerId = currentDogwalker.id;
   const dataURL = "http://localhost:8001/dogWalkers";
   return axios
     .get(`${dataURL}/${walkerId}`)
