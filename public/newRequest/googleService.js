@@ -24,7 +24,8 @@ function initMap() {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-        console.log(currentPosition);
+        reverseGeocode(currentPosition);
+
         map.setCenter(currentPosition);
         new google.maps.Marker({
           map: map,
@@ -39,41 +40,6 @@ function initMap() {
   } else {
     handleLocationError(false, map.getCenter());
   }
-
-  document.getElementById("submit").addEventListener("click", function () {
-    geocodeAddress(geocoder, map);
-  });
-
-  document
-    .getElementById("currentLocation")
-    .addEventListener("click", function () {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          function (position) {
-            currentPosition = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            };
-
-            map.setCenter(currentPosition);
-            new google.maps.Marker({
-              map: map,
-              position: currentPosition,
-            });
-          },
-          function () {
-            handleLocationError(true, map.getCenter());
-          },
-          { enableHighAccuracy: true }
-        );
-      } else {
-        handleLocationError(false, map.getCenter());
-      }
-    });
-
-  document.getElementById("navigate").addEventListener("click", function () {
-    calculateAndDisplayRoute(directionsService, directionsRenderer);
-  });
 }
 
 function loadGoogleMapsAPI() {
@@ -108,6 +74,23 @@ function geocodeAddress(geocoder, resultsMap) {
       console.log(resultsMap);
     } else {
       alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+}
+
+function reverseGeocode(latlng) {
+  geocoder.geocode({ location: latlng }, function (results, status) {
+    if (status === "OK") {
+      if (results[0]) {
+        console.log("Address:", results[0].formatted_address);
+        document.getElementById("current-location").value =
+          results[0].formatted_address;
+        return results[0].formatted_address;
+      } else {
+        console.error("No results found");
+      }
+    } else {
+      console.error("Geocoder failed due to:", status);
     }
   });
 }
