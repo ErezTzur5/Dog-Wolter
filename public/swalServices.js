@@ -29,7 +29,7 @@ function showErrorToast(msgTitle) {
     timer: 3000,
     timerProgressBar: true,
     icon: "error",
-    title: msgTitle,
+    title: `<p style="color: red">${msgTitle}`,
     didOpen: (toast) => {
       toast.addEventListener("mouseenter", Swal.stopTimer);
       toast.addEventListener("mouseleave", Swal.resumeTimer);

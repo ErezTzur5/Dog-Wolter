@@ -548,6 +548,18 @@
       "currentLocation": "Dizengoff Square, Tel Aviv-Yafo",
       "currentTime": "01:41",
       "timeDuration": "20"
+    },
+    {
+      "id": "bd99",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "01:56",
+      "timeDuration": "20"
+    },
+    {
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "332",
+      "timeDuration": " 20 minutes",
+      "id": "f96c"
     }
   ]
 }
