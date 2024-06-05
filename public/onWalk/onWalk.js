@@ -1,3 +1,5 @@
+import { swalService } from "../swalServices.js";
+
 const requestDataUrl = "http://localhost:8001/requests";
 const dogwalkersDataURL = "http://localhost:8001/dogWalkers";
 let distanceP, durationP;
@@ -8,13 +10,13 @@ window.onload = function () {
   directionsRenderer.setMap(
     new google.maps.Map(document.getElementById("map"))
   );
+  swalService.showSucssesToast("Your DogWolter is on their way!");
   calculateAndDisplayRoute(directionsService, directionsRenderer);
   displayTimeAndDuration();
 };
 
 async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   try {
-    // Get the query parameters from the URL
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     const requestId = params.get("id");
@@ -103,7 +105,7 @@ function startCountdown(distance, duration) {
       distanceDiv.classList.add("hidden");
       durationDiv.classList.add("hidden");
       dogwalkerStatus.innerText = "Your dogwolter has arrived!";
-      // Your dogwalker has arrived message
+      swalService.arriveToast();
     }
   }, 1000);
 }

@@ -520,9 +520,33 @@
       "timeDuration": "20"
     },
     {
-      "id": "39bc",
+      "id": "0ed3",
       "currentLocation": "Patai St 14, Giv'atayim, Israel",
-      "currentTime": "01:35",
+      "currentTime": "01:02",
+      "timeDuration": "20"
+    },
+    {
+      "id": "c371",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "01:05",
+      "timeDuration": "20"
+    },
+    {
+      "id": "a08d",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "01:17",
+      "timeDuration": "20"
+    },
+    {
+      "id": "7147",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "01:41",
+      "timeDuration": "20"
+    },
+    {
+      "id": "73ee",
+      "currentLocation": "Dizengoff Square, Tel Aviv-Yafo",
+      "currentTime": "01:41",
       "timeDuration": "20"
     }
   ]

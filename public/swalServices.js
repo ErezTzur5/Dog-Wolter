@@ -3,10 +3,10 @@ function showSucssesToast(msgTitle) {
     toast: true,
     position: "top",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 3000,
     timerProgressBar: true,
     icon: "success",
-    title: msgTitle,
+    title: `<p style="color: green">${msgTitle}`,
     didOpen: (toast) => {
       toast.addEventListener("mouseenter", Swal.stopTimer);
       toast.addEventListener("mouseleave", Swal.resumeTimer);
@@ -26,7 +26,7 @@ function showErrorToast(msgTitle) {
     toast: true,
     position: "top",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 3000,
     timerProgressBar: true,
     icon: "error",
     title: msgTitle,
@@ -66,8 +66,16 @@ function showToast() {
   });
 }
 
+function arriveToast() {
+  Swal.fire({
+    title: "Your DogWolter Has Arrived!",
+    icon: "success",
+  });
+}
+
 export const swalService = {
   showErrorToast,
   showSucssesToast,
   showToast,
+  arriveToast,
 };

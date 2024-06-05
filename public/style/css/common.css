@@ -25,7 +25,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 9999;
+  z-index: 8000;
 }
 .content-section {
   padding-block: var(--content-spacing-medium);
@@ -48,7 +48,7 @@ body {
   align-items: center;
   padding-left: 0px;
   margin-right: var(--content-spacing-xxl);
-  z-index: 9999;
+  z-index: 8000;
 }
 .navbar li a {
   color: var(--clr-text-light);
@@ -161,4 +161,8 @@ body {
 .required:after {
   content: " *";
   color: red;
+}
+
+.z-index-9999 {
+  z-index: 9999;
 }
