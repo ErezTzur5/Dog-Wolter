@@ -35,11 +35,18 @@
       <!-- <p>your location: </p>
       <p>when you want the dogwolter: </p>
       <p>duration trip time: </p> -->
+      <button onclick="editRequest()">edit your request</button>
+      <button onclick="deleteRequest()">delete your request</button>
     </div>
 
     <div id="availableDogwalkers">
       <h2>Available Dogwalkers</h2>
-      <div id="dogwalkerCard"></div>
+      <div id="dogwalkerCard">
+        <img src="" alt="" />
+        <p>Name:</p>
+        <button onclick="acceptRequest()">Accept</button>
+        <button onclick="declineRequest()">Decline</button>
+      </div>
     </div>
 
     <script src="./requestProperties.js"></script>
