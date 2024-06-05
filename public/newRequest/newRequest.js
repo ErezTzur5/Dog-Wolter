@@ -48,3 +48,7 @@ document
         //error message
       });
   });
+
+document.getElementById("time").addEventListener("click", function () {
+  this.showPicker();
+});

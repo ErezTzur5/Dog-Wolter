@@ -37,34 +37,56 @@
       </nav>
     </header>
 
-    <main>
-      <h1>Search for a dogwolter...</h1>
-      <div id="map" style="height: 400px; width: 60%"></div>
-
-      <form action="" id="createNewRequest">
-        <input
-          type="text"
-          id="current-location"
-          placeholder="Current Location"
-          required
-        />
-        <select id="time-duration" name="time-duration" required>
-          <option value="5">5 minutes</option>
-          <option value="10">10 minutes</option>
-          <option value="15">15 minutes</option>
-          <option value="20" selected>20 minutes</option>
-          <option value="25">25 minutes</option>
-          <option value="30">30 minutes</option>
-          <option value="35">35 minutes</option>
-          <option value="40">40 minutes</option>
-          <option value="45">45 minutes</option>
-          <option value="50">50 minutes</option>
-          <option value="55">55 minutes</option>
-          <option value="60">60 minutes</option>
-        </select>
-        <input type="time" id="time" placeholder="When" required />
-        <button type="submit">Search</button>
-      </form>
+    <main class="mainSection">
+      <h1 class="heading request-main-header margin-inline-general">
+        Search For a DogWolter...
+      </h1>
+      <div class="request-content-wrapper">
+        <div class="map-wrapper">
+          <div
+            id="map"
+            class="location-map"
+            style="width: 100%; height: 100%"
+          ></div>
+        </div>
+        <form class="request-form" action="" id="createNewRequest">
+          <label class="required" for="current-location"
+            >Where Will The DogWolter Meet You?</label
+          >
+          <input
+            type="text"
+            id="current-location"
+            placeholder="Ramat-Gan Hahilazon 3"
+            required
+          />
+          <label class="required" for="time-duration">Walk Duration</label>
+          <select id="time-duration" name="time-duration" required>
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="15">15 minutes</option>
+            <option value="20" selected>20 minutes</option>
+            <option value="25">25 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="35">35 minutes</option>
+            <option value="40">40 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="50">50 minutes</option>
+            <option value="55">55 minutes</option>
+            <option value="60">60 minutes</option>
+          </select>
+          <label class="required" for="time"
+            >When Will The DogWolter Meet You?</label
+          >
+          <input
+            type="time"
+            id="time"
+            placeholder="When"
+            required
+            onclick="this.showPicker();"
+          />
+          <button class="cta-button" type="submit">Search</button>
+        </form>
+      </div>
     </main>
 
     <script
