@@ -255,7 +255,8 @@
         4.2,
         3.7,
         1.2,
-        3.8
+        3.8,
+        3
       ],
       "id": "fa14",
       "phoneNumber": "0528901234"
@@ -638,6 +639,12 @@
       "id": "bd5b",
       "currentLocation": "Dizengoff Square, Tel Aviv-Yafo",
       "currentTime": "04:53",
+      "timeDuration": "20"
+    },
+    {
+      "id": "1648",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "04:58",
       "timeDuration": "20"
     }
   ]
