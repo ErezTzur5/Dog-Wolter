@@ -118,7 +118,7 @@ function updateCountdown() {
               class="star">★
         </span>
 
-<button onclick="updateRatingData('${userId.trim()}')">Confirm</button>
+      <button onclick="updateRatingData('${userId.trim()}')">Confirm</button>
 
         `,
       showConfirmButton: false,

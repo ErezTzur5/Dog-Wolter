@@ -72,10 +72,3 @@ export function showDogwalkerProperties(currentDogwalker) {
       // error message
     });
 }
-
-export async function updateRatingData(userRating, dogwalkerId) {
-  const dataURL = "http://localhost:8001/dogWalkers";
-  const dogwalkersResponse = await axios.get(`${dataURL}/${dogwalkerId}`);
-  const ratings = dogwalkersResponse.data.rating;
-  console.log(ratings);
-}

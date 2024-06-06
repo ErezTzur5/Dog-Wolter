@@ -147,7 +147,7 @@ async function showDogwolter() {
 }
 
 let stars = document.getElementsByClassName("star");
-let userRating;
+let userRating = 0;
 
 function gfg(n) {
   let cls;

@@ -42,7 +42,8 @@
         2,
         1,
         3,
-        5
+        5,
+        0
       ],
       "id": "ec5e",
       "phoneNumber": "0521234567"
@@ -225,7 +226,8 @@
         4.5,
         3.6,
         4.1,
-        3.8
+        3.8,
+        5
       ],
       "id": "2081",
       "phoneNumber": "0527890123"
@@ -618,8 +620,20 @@
       "timeDuration": "20"
     },
     {
-      "id": "953c",
+      "id": "c80e",
       "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "04:44",
+      "timeDuration": "20"
+    },
+    {
+      "id": "fee8",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "04:48",
+      "timeDuration": "20"
+    },
+    {
+      "id": "8255",
+      "currentLocation": "Dizengoff Square, Tel Aviv-Yafo",
       "currentTime": "04:48",
       "timeDuration": "20"
     },
