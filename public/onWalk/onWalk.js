@@ -22,6 +22,9 @@ window.onload = function () {
 
 async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   try {
+    showLoader();
+    // Get the query parameters from the URL
+
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     const requestId = params.get("id");
@@ -63,6 +66,7 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
           distanceP = distance;
           durationP = duration;
           displayTimeAndDuration();
+          hideLoader();
         } else {
           alert("Directions request failed due to " + status);
         }
@@ -118,6 +122,14 @@ function startCountdown(distance, duration) {
   }, 1000);
 }
 
+function showLoader() {
+  mapLoader.style.display = "flex";
+}
+
+function hideLoader() {
+  mapLoader.style.display = "none";
+}
+
 async function showDogwolter() {
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
@@ -132,15 +144,13 @@ async function showDogwolter() {
     const rating = dogwalker.rating;
     const phone = dogwalker.phoneNumber;
     dogwolterInfo.innerHTML = `
-    <img class = "popup-pic" src="${img}" alt="dogWalkerPic"">
-    <h1 class = "popup-header"><b>${dogwalkerName}</b></h1>
-    <p class = "popup-phone-number"><b>Phone Number:</b> ${phone}</p>
-    <p class = "popup-address"><b>Address:</b> ${address}</p>
-    <p class = "popup-description"><b>Description:</b> ${description}</p>
-    <p class = "popup-rating"><b>Rating:</b> ${calculateAverageRating(
-      rating
-    )}</p>
-  `;
+  <img class = "popup-pic" src="${img}" alt="dogWalkerPic"">
+  <h1 class = "popup-header"><b>${dogwalkerName}</b></h1>
+  <p class = "popup-phone-number"><b>Phone Number:</b> ${phone}</p>
+  <p class = "popup-address"><b>Address:</b> ${address}</p>
+  <p class = "popup-description"><b>Description:</b> ${description}</p>
+  <p class = "popup-rating"><b>Rating:</b> ${calculateAverageRating(rating)}</p>
+`;
   } catch (e) {
     console.log(e);
   }

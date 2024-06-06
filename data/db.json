@@ -197,7 +197,8 @@
         3.7,
         1.7,
         3.9,
-        4
+        4,
+        3
       ],
       "id": "9f42",
       "phoneNumber": "0526789012"
@@ -258,7 +259,8 @@
         4.2,
         3.7,
         1.2,
-        3.8
+        3.8,
+        3
       ],
       "id": "fa14",
       "phoneNumber": "0528901234"
@@ -531,6 +533,18 @@
       "timeDuration": "20"
     },
     {
+      "id": "b4cc",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "06:10",
+      "timeDuration": "20"
+    },
+    {
+      "id": "68f3",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "06:19",
+      "timeDuration": "20"
+    },
+    {
       "id": "0ed3",
       "currentLocation": "Patai St 14, Giv'atayim, Israel",
       "currentTime": "01:02",
@@ -693,9 +707,45 @@
       "timeDuration": "20"
     },
     {
-      "id": "0ff4",
+      "id": "1648",
       "currentLocation": "Patai St 14, Giv'atayim, Israel",
-      "currentTime": "07:40",
+      "currentTime": "04:58",
+      "timeDuration": "20"
+    },
+    {
+      "id": "cb6e",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "06:32",
+      "timeDuration": "20"
+    },
+    {
+      "id": "9b72",
+      "currentLocation": "Dizengoff Square, Tel Aviv-Yafo",
+      "currentTime": "06:33",
+      "timeDuration": "20"
+    },
+    {
+      "id": "cab8",
+      "currentLocation": "Dizengoff Street, Tel Aviv-Yafo, Israel",
+      "currentTime": "06:34",
+      "timeDuration": "20"
+    },
+    {
+      "id": "e314",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "06:36",
+      "timeDuration": "20"
+    },
+    {
+      "id": "fe8e",
+      "currentLocation": "Haifa, Israel",
+      "currentTime": "06:37",
+      "timeDuration": "20"
+    },
+    {
+      "id": "91a1",
+      "currentLocation": "Haifa, Israel",
+      "currentTime": "06:37",
       "timeDuration": "20"
     }
   ]
