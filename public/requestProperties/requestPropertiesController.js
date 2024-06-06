@@ -3,7 +3,6 @@ import {
   deleteRequest,
   showDogwalkerProperties,
   showToast,
-  updateRatingData,
 } from "./requestPropertiesService.js";
 
 import { swalService } from "../swalServices.js";
