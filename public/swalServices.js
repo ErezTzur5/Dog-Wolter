@@ -46,6 +46,29 @@ function showErrorToast(msgTitle) {
   });
 }
 
+function showInfoToast(msgTitle) {
+  Swal.fire({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    icon: "info",
+    title: `<p style="color: blue">${msgTitle}`,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+      toast.addEventListener("click", () => Swal.close());
+    },
+    willClose: (toast) => {
+      toast.style.transition = "opacity 20s";
+      setTimeout(() => {
+        toast.style.opacity = "0";
+      }, 20000);
+    },
+  });
+}
+
 function showToast() {
   Swal.fire({
     title: "<strong>HTML <u>Wolter</u></strong>",
@@ -73,7 +96,7 @@ async function arriveToast(requestURL, requestID) {
     const response = await axios.get(`${requestURL}/${requestID}`);
     const time = response.data.timeDuration;
     Swal.fire({
-      title: `Your DogWolter Has Arrived! Now it's time for the walk...`,
+      title: `Rexi is on the move! 🐕 `,
       html: `
           <div id="custom-icon" style="font-size: 50px; cursor: pointer;">&#x1F436;</div>
           <div id="timeDuration">time left: ${time} minutes</div>
@@ -131,4 +154,5 @@ export const swalService = {
   showSucssesToast,
   showToast,
   arriveToast,
+  showInfoToast,
 };

@@ -108,6 +108,9 @@ function startCountdown(distance, duration) {
   let distancePerSecond = totalDistance / totalTime;
 
   let interval = setInterval(() => {
+    if (totalTime === 5) {
+      swalService.showInfoToast("Your DogWolter is almost here!");
+    }
     if (totalTime > 0) {
       totalTime -= 1;
       totalDistance -= distancePerSecond;

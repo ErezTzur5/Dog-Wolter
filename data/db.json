@@ -40,7 +40,8 @@
         5,
         5,
         5,
-        2
+        2,
+        5
       ],
       "id": "ec5e",
       "phoneNumber": "0521234567"
@@ -172,7 +173,7 @@
       "phoneNumber": "0525678901"
     },
     {
-      "name": "Yuval Maderer Fucker",
+      "name": "Yuval JSON",
       "address": "987 Ben Yehuda St, Tel Aviv, Israel",
       "img": "../style/images/yuval.jpg",
       "description": "IT support specialist with expertise in troubleshooting and resolving technical issues. Enjoys training my Labrador.",
@@ -328,5 +329,11 @@
     }
   ],
   "requests": [
+    {
+      "id": "e17a",
+      "currentLocation": "Dizengoff Square, Tel Aviv-Yafo",
+      "currentTime": "08:42",
+      "timeDuration": "20"
+    }
   ]
 }
