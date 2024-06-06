@@ -1,7 +1,9 @@
 import { swalService } from "../swalServices.js";
+import { calculateAverageRating } from "../requestProperties/requestPropertiesController.js";
 
 const requestDataUrl = "http://localhost:8001/requests";
 const dogwalkersDataURL = "http://localhost:8001/dogWalkers";
+const dogwolterInfo = document.getElementById("dogwolter-info");
 let distanceP, durationP;
 
 window.onload = function () {
@@ -10,6 +12,9 @@ window.onload = function () {
   directionsRenderer.setMap(
     new google.maps.Map(document.getElementById("map"))
   );
+  window.gfg = gfg;
+  window.updateRatingData = updateRatingData;
+  showDogwolter();
   swalService.showSucssesToast("Your DogWolter is on their way!");
   calculateAndDisplayRoute(directionsService, directionsRenderer);
   displayTimeAndDuration();
@@ -88,6 +93,9 @@ function startCountdown(distance, duration) {
   const dogwalkerStatus = document.querySelector("h1");
   let totalDistance = parseFloat(distance.split(" ")[0]);
   let totalTime = parseInt(duration.split(" ")[0]);
+  const url = new URL(window.location.href);
+  const params = new URLSearchParams(url.search);
+  const requestId = params.get("id");
 
   let distancePerSecond = totalDistance / totalTime;
 
@@ -105,7 +113,79 @@ function startCountdown(distance, duration) {
       distanceDiv.classList.add("hidden");
       durationDiv.classList.add("hidden");
       dogwalkerStatus.innerText = "Your dogwolter has arrived!";
-      swalService.arriveToast();
+      swalService.arriveToast(requestDataUrl, requestId);
     }
   }, 1000);
+}
+
+async function showDogwolter() {
+  const url = new URL(window.location.href);
+  const params = new URLSearchParams(url.search);
+  const dogwalkerId = params.get("dogwalkerId");
+  try {
+    const response = await axios.get(`${dogwalkersDataURL}/${dogwalkerId}`);
+    const dogwalker = response.data;
+    const img = dogwalker.img;
+    const dogwalkerName = dogwalker.name;
+    const address = dogwalker.address;
+    const description = dogwalker.description;
+    const rating = dogwalker.rating;
+    const phone = dogwalker.phoneNumber;
+    dogwolterInfo.innerHTML = `
+    <img class = "popup-pic" src="${img}" alt="dogWalkerPic"">
+    <h1 class = "popup-header"><b>${dogwalkerName}</b></h1>
+    <p class = "popup-phone-number"><b>Phone Number:</b> ${phone}</p>
+    <p class = "popup-address"><b>Address:</b> ${address}</p>
+    <p class = "popup-description"><b>Description:</b> ${description}</p>
+    <p class = "popup-rating"><b>Rating:</b> ${calculateAverageRating(
+      rating
+    )}</p>
+  `;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+let stars = document.getElementsByClassName("star");
+let userRating;
+
+function gfg(n) {
+  let cls;
+  remove();
+  for (let i = 0; i < n; i++) {
+    if (n == 1) cls = "one";
+    else if (n == 2) cls = "two";
+    else if (n == 3) cls = "three";
+    else if (n == 4) cls = "four";
+    else if (n == 5) cls = "five";
+    stars[i].className = "star " + cls;
+  }
+  userRating = n;
+}
+
+function remove() {
+  let i = 0;
+  while (i < 5) {
+    stars[i].className = "star";
+    i++;
+  }
+}
+
+async function updateRatingData(dogwalkerId) {
+  const dataURL = "http://localhost:8001/dogWalkers";
+  const dogwalkersResponse = await axios.get(`${dataURL}/${dogwalkerId}`);
+  const ratings = dogwalkersResponse.data.rating;
+  ratings.push(userRating);
+  const newUrl = "http://127.0.0.1:5500/public/home/homePage.html";
+  await axios
+    .patch(`${dataURL}/${dogwalkerId}`, {
+      rating: ratings,
+    })
+    .then((result) => {
+      window.location.href = newUrl;
+      // success
+    })
+    .catch((err) => {
+      // error
+    });
 }

@@ -1,9 +1,9 @@
 import {
   addRequestToDom,
-  updateData,
   deleteRequest,
   showDogwalkerProperties,
   showToast,
+  updateRatingData,
 } from "./requestPropertiesService.js";
 
 import { swalService } from "../swalServices.js";
@@ -74,7 +74,7 @@ function onClickAcceptButton(svgElement) {
   window.location.href = newUrl;
 }
 
-function calculateAverageRating(dogWalker) {
+export function calculateAverageRating(dogWalker) {
   const sum = dogWalker.reduce((acc, curr) => acc + curr, 0);
   const average = sum / dogWalker.length;
 

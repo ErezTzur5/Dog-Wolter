@@ -1,3 +1,5 @@
+let countdownDuration;
+
 function showSucssesToast(msgTitle) {
   Swal.fire({
     toast: true,
@@ -66,13 +68,64 @@ function showToast() {
   });
 }
 
-function arriveToast() {
-  Swal.fire({
-    title: "Your DogWolter Has Arrived!",
-    icon: "success",
-  });
+async function arriveToast(requestURL, requestID) {
+  try {
+    const response = await axios.get(`${requestURL}/${requestID}`);
+    const time = response.data.timeDuration;
+    Swal.fire({
+      title: `Your DogWolter Has Arrived! Now it's time for the walk...`,
+      html: `
+          <div id="custom-icon" style="font-size: 50px; cursor: pointer;">&#x1F436;</div>
+          <div id="timeDuration">time left: ${time} minutes</div>
+        `,
+      showConfirmButton: false,
+      allowOutsideClick: false,
+    });
+    countdownDuration = time;
+    updateCountdown();
+  } catch (error) {
+    console.error("There was an error making the request:", error);
+  }
 }
 
+function updateCountdown() {
+  const params = new URLSearchParams(window.location.search);
+  const userId = params.get("dogwalkerId");
+  console.log(userId);
+  const timeDiv = document.getElementById("timeDuration");
+  countdownDuration--;
+  timeDiv.textContent = `time left: ${countdownDuration} minutes`;
+  if (countdownDuration > 0) {
+    setTimeout(updateCountdown, 1000);
+  } else {
+    Swal.close();
+    Swal.fire({
+      title: `How would you rate your DogWolter?`,
+      html: `
+                  <span onclick="gfg(1)"
+              class="star">★
+        </span>
+        <span onclick="gfg(2)"
+              class="star">★
+        </span>
+        <span onclick="gfg(3)"
+              class="star">★
+        </span>
+        <span onclick="gfg(4)"
+              class="star">★
+        </span>
+        <span onclick="gfg(5)"
+              class="star">★
+        </span>
+
+<button onclick="updateRatingData('${userId.trim()}')">Confirm</button>
+
+        `,
+      showConfirmButton: false,
+      allowOutsideClick: false,
+    });
+  }
+}
 export const swalService = {
   showErrorToast,
   showSucssesToast,
