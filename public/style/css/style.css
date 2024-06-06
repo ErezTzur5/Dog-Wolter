@@ -230,6 +230,7 @@ body.swal2-shown > [aria-hidden="true"] {
   width: 140px;
   gap: 10px;
   cursor: pointer;
+  background-color: var(--clr-background-800);
 }
 .buttons-div {
   display: flex;
