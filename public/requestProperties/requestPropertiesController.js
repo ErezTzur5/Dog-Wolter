@@ -1,10 +1,12 @@
 import {
   addRequestToDom,
-  updateData,
   deleteRequest,
   showDogwalkerProperties,
   showToast,
+  updateRatingData,
 } from "./requestPropertiesService.js";
+
+import { swalService } from "../swalServices.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const dataURL = "http://localhost:8001/requests";
@@ -19,7 +21,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   <p class = "dog-walker-request-data">${data.currentTime}</p>
   <h3 class = "trip-duration"> Trip Duration:</h3>
   <p class = "trip-duration-data"> ${data.timeDuration} minutes</p>
-  <button class = "cta-button edit-request-btn" onclick="onClickEditButton(this)">edit your request</button>
   <button class = "cta-button delete-request-btn" onclick="onClickDeleteButton(this)">delete your request</button>
   `;
   const dogwalkersDataURL = "http://localhost:8001/dogWalkers";
@@ -28,54 +29,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 window.onload = onInit();
 
-function onClickEditButton(svgElement) {
-  const divElem = svgElement.parentNode;
-  const SaveRequestButton = document.createElement("button");
-  SaveRequestButton.textContent = "save your request";
-  SaveRequestButton.onclick = function () {
-    onClickSaveButton(this);
-  };
-  divElem.replaceChild(SaveRequestButton, svgElement);
-  const p = divElem.querySelectorAll("p");
-  p.forEach((paragraph) => {
-    const input = document.createElement("input");
-    input.value = paragraph.textContent;
-    divElem.replaceChild(input, paragraph);
-  });
-}
-
-function onClickSaveButton(svgElement) {
-  const divElem = svgElement.parentNode;
-  const inpts = divElem.querySelectorAll("input");
-  const location = inpts[0].value;
-  const time = inpts[1].value;
-  const duration = inpts[2].value;
-  try {
-    updateData(location, time, duration);
-    const EditRequestButton = document.createElement("button");
-    EditRequestButton.textContent = "edit your request";
-    EditRequestButton.onclick = editRequest;
-    divElem.replaceChild(EditRequestButton, svgElement);
-    const inputs = divElem.querySelectorAll("input");
-    inputs.forEach((input) => {
-      const p = document.createElement("p");
-      p.textContent = input.value;
-      divElem.replaceChild(p, input);
-      // success message
-    });
-  } catch (e) {
-    // error message
-  }
-}
-
 function onClickDeclineButton(svgElement) {
   try {
     const dogwalkerCard = svgElement.parentNode;
     const dogwalkerGrandparent = dogwalkerCard.parentNode;
     dogwalkerGrandparent.remove();
-    // success message
+    swalService.showErrorToast("You choose to decline this DogWolter");
   } catch (e) {
-    // error message
+    swalService.showErrorToast("There was an error decline this DogWolter");
   }
 }
 
@@ -95,7 +56,7 @@ async function onClickShowDogwalkerButton(svgElement) {
       calculateAverageRating(propetries.rating)
     );
   } catch (e) {
-    // error message
+    swalService.showErrorToast("There was an error show this DogWolter");
   }
 }
 
@@ -113,13 +74,11 @@ function onClickAcceptButton(svgElement) {
   window.location.href = newUrl;
 }
 
-function calculateAverageRating(dogWalker) {
+export function calculateAverageRating(dogWalker) {
   const sum = dogWalker.reduce((acc, curr) => acc + curr, 0);
   const average = sum / dogWalker.length;
 
-  console.log(average);
   const fixAverage = parseFloat(average.toFixed(1));
-  console.log(fixAverage);
 
   return fixAverage;
 }
@@ -159,10 +118,10 @@ function addRandomDogWalkersToDom(URL, count) {
 
         const ratingParagraph = document.createElement("p");
         ratingParagraph.classList.add("walker-rating");
-        console.log(dogwalker.rating);
-        ratingParagraph.innerHTML = ` ${calculateAverageRating(
+        ratingParagraph.innerHTML = `${calculateAverageRating(
           dogwalker.rating
-        )} <i class="rating-star fa-solid fa-star"></i>`;
+        )} 
+        <i class="rating-star fa-solid fa-star"></i>`;
 
         const idParagraph = document.createElement("p");
         idParagraph.textContent = dogwalker.id;
@@ -213,8 +172,6 @@ function getRandomDogWalkers(dogWalkers, count) {
 
 function onInit() {
   window.addRequestToDom = addRequestToDom;
-  window.onClickEditButton = onClickEditButton;
-  window.onClickSaveButton = onClickSaveButton;
   window.onClickDeclineButton = onClickDeclineButton;
   window.onClickDeleteButton = onClickDeleteButton;
   window.onClickShowDogwalkerButton = onClickShowDogwalkerButton;

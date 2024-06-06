@@ -579,3 +579,28 @@ body.swal2-shown > [aria-hidden="true"] {
 .swal2-container {
   z-index: 9999;
 }
+
+.star {
+  font-size: 10vh;
+  cursor: pointer;
+}
+
+.one {
+  color: #ffe234;
+}
+
+.two {
+  color: #ffe234;
+}
+
+.three {
+  color: #ffe234;
+}
+
+.four {
+  color: #ffe234;
+}
+
+.five {
+  color: #ffe234;
+}
