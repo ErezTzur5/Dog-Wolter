@@ -166,7 +166,8 @@
         1.9,
         3.7,
         4,
-        3.9
+        3.9,
+        5
       ],
       "id": "5432",
       "phoneNumber": "0525678901"
@@ -746,6 +747,12 @@
       "id": "91a1",
       "currentLocation": "Haifa, Israel",
       "currentTime": "06:37",
+      "timeDuration": "20"
+    },
+    {
+      "id": "3ee2",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "07:45",
       "timeDuration": "20"
     }
   ]
