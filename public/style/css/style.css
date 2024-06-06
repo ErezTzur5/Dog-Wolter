@@ -477,6 +477,34 @@ body.swal2-shown > [aria-hidden="true"] {
   animation: change-color 0.3s forwards;
   transform: translateY(-4px);
 }
+.swal2-container {
+  z-index: 9999;
+}
+
+.star {
+  font-size: 7svh;
+  cursor: pointer;
+}
+
+.one {
+  color: #ffe234;
+}
+
+.two {
+  color: #ffe234;
+}
+
+.three {
+  color: #ffe234;
+}
+
+.four {
+  color: #ffe234;
+}
+
+.five {
+  color: #ffe234;
+}
 
 @media screen and (min-width: 300px) {
   .dog-card {
@@ -495,6 +523,14 @@ body.swal2-shown > [aria-hidden="true"] {
   }
   .dog-card {
     width: 400px;
+  }
+  .star {
+    font-size: 9svh;
+  }
+}
+@media screen and (min-width: 510px) {
+  .star {
+    font-size: 10svh;
   }
 }
 @media all and (min-width: 600px) {
@@ -603,6 +639,9 @@ body.swal2-shown > [aria-hidden="true"] {
   .walker-onwalk-detail-wrapper {
     height: 525px;
   }
+  .star {
+    font-size: 11svh;
+  }
 }
 @media screen and (min-width: 750px) {
   .request-detail-wrapper {
@@ -629,7 +668,7 @@ body.swal2-shown > [aria-hidden="true"] {
   }
 }
 .walker-onwalk-detail-wrapper {
-  height: 500px;
+  height: 475px;
 }
 .hidden {
   display: none;
@@ -653,33 +692,4 @@ body.swal2-shown > [aria-hidden="true"] {
   .request-detail-wrapper {
     height: 350px;
   }
-}
-
-.swal2-container {
-  z-index: 9999;
-}
-
-.star {
-  font-size: 10vh;
-  cursor: pointer;
-}
-
-.one {
-  color: #ffe234;
-}
-
-.two {
-  color: #ffe234;
-}
-
-.three {
-  color: #ffe234;
-}
-
-.four {
-  color: #ffe234;
-}
-
-.five {
-  color: #ffe234;
 }
