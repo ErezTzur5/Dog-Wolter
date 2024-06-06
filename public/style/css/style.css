@@ -232,6 +232,7 @@ body.swal2-shown > [aria-hidden="true"] {
   width: 140px;
   gap: 10px;
   cursor: pointer;
+  background-color: var(--clr-background-800);
 }
 .buttons-div {
   display: flex;
@@ -548,6 +549,9 @@ body.swal2-shown > [aria-hidden="true"] {
   }
 }
 @media screen and (min-width: 750px) {
+  .request-detail-wrapper {
+    height: 450px;
+  }
   .info-section {
     flex-direction: row;
   }
@@ -561,6 +565,11 @@ body.swal2-shown > [aria-hidden="true"] {
   }
   .dog-card {
     width: 500px;
+  }
+}
+@media screen and (min-width: 945px) {
+  .request-detail-wrapper {
+    height: 350px;
   }
 }
 
@@ -580,4 +589,29 @@ body.swal2-shown > [aria-hidden="true"] {
 
 .swal2-container {
   z-index: 9999;
+}
+
+.star {
+  font-size: 10vh;
+  cursor: pointer;
+}
+
+.one {
+  color: #ffe234;
+}
+
+.two {
+  color: #ffe234;
+}
+
+.three {
+  color: #ffe234;
+}
+
+.four {
+  color: #ffe234;
+}
+
+.five {
+  color: #ffe234;
 }

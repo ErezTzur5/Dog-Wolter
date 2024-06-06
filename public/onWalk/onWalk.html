@@ -29,10 +29,12 @@
               <a href="../home/homePage.html">Home</a>
             </div>
             <div class="links-list-element">
-              <a href="../newRequest/newRequest.html">Get a DogWolter</a>
+              <a class="current-page" href="../newRequest/newRequest.html"
+                >Get a DogWolter</a
+              >
             </div>
             <div class="links-list-element">
-              <a class="current-page" href="profile.html">Profile</a>
+              <a href="../profile/profile.html">Profile</a>
             </div>
           </li>
           <li class="login">
@@ -45,6 +47,8 @@
     <div id="map" style="height: 300px; width: 40%; border-radius: 8px"></div>
     <h1>Your dogwalker is on their way...</h1>
     <div id="timeUntilArrival"></div>
+
+    <div class="dog-walker-detail-wrapper" id="dogwolter-info"></div>
 
     <script type="module" src="./onWalk.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -5,23 +5,6 @@ export function addRequestToDom(URL, id) {
   });
 }
 
-export function updateData(location, time, duration) {
-  const dataURL = "http://localhost:8001/requests";
-  const params = new URLSearchParams(window.location.search);
-  const requestId = params.get("id");
-  const updatedRequest = {
-    currentLocation: location,
-    currentTime: time,
-    timeDuration: duration,
-  };
-  try {
-    axios.put(`${dataURL}/${requestId}`, updatedRequest);
-    // success message
-  } catch (err) {
-    // error message
-  }
-}
-
 export function deleteRequest() {
   const params = new URLSearchParams(window.location.search);
   const requestId = params.get("id");
@@ -88,4 +71,11 @@ export function showDogwalkerProperties(currentDogwalker) {
     .catch((error) => {
       // error message
     });
+}
+
+export async function updateRatingData(userRating, dogwalkerId) {
+  const dataURL = "http://localhost:8001/dogWalkers";
+  const dogwalkersResponse = await axios.get(`${dataURL}/${dogwalkerId}`);
+  const ratings = dogwalkersResponse.data.rating;
+  console.log(ratings);
 }
