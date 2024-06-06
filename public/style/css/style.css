@@ -506,6 +506,23 @@ body.swal2-shown > [aria-hidden="true"] {
   color: #ffe234;
 }
 
+
+.loader {
+  position: absolute;
+  top: 37%;
+  left: 27%;
+  width: 200px;
+  height: 100px;
+  background-image: url("../images/WolfWildNew.gif");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  z-index: 1000;
+}
+
 @media screen and (min-width: 300px) {
   .dog-card {
     width: 300px;
