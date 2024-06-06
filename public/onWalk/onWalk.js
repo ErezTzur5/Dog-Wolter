@@ -22,6 +22,9 @@ window.onload = function () {
 
 async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   try {
+    showLoader();
+    // Get the query parameters from the URL
+
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     const requestId = params.get("id");
@@ -63,6 +66,7 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
           distanceP = distance;
           durationP = duration;
           displayTimeAndDuration();
+          hideLoader();
         } else {
           alert("Directions request failed due to " + status);
         }
@@ -77,10 +81,10 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 function displayTimeAndDuration() {
   const timeUntilArrivalDiv = document.getElementById("timeUntilArrival");
   timeUntilArrivalDiv.innerHTML = `
-  <div id="distance">Distance remaining: ${
+  <div id="distance"><i class="onwalk-road-icon fa-solid fa-road"></i> ${
     distanceP ? distanceP : "loading..."
   }</div>
-  <div id="duration">Time remaining: ${
+  <div id="duration"><i class="onwalk-time-icon fa-solid fa-stopwatch"></i> ${
     durationP ? durationP : "loading..."
   }</div>
   `;
@@ -104,10 +108,10 @@ function startCountdown(distance, duration) {
       totalTime -= 1;
       totalDistance -= distancePerSecond;
 
-      distanceDiv.innerText = `Distance remaining: ${totalDistance.toFixed(
+      distanceDiv.innerHTML = `<i class="onwalk-road-icon fa-solid fa-road"></i>${totalDistance.toFixed(
         1
       )} km`;
-      durationDiv.innerText = `Time remaining: ${totalTime} mins`;
+      durationDiv.innerHTML = `<i class="onwalk-time-icon fa-solid fa-stopwatch"></i>  ${totalTime} mins`;
     } else {
       clearInterval(interval);
       distanceDiv.classList.add("hidden");
@@ -116,6 +120,14 @@ function startCountdown(distance, duration) {
       swalService.arriveToast(requestDataUrl, requestId);
     }
   }, 1000);
+}
+
+function showLoader() {
+  mapLoader.style.display = "flex";
+}
+
+function hideLoader() {
+  mapLoader.style.display = "none";
 }
 
 async function showDogwolter() {
@@ -132,15 +144,13 @@ async function showDogwolter() {
     const rating = dogwalker.rating;
     const phone = dogwalker.phoneNumber;
     dogwolterInfo.innerHTML = `
-    <img class = "popup-pic" src="${img}" alt="dogWalkerPic"">
-    <h1 class = "popup-header"><b>${dogwalkerName}</b></h1>
-    <p class = "popup-phone-number"><b>Phone Number:</b> ${phone}</p>
-    <p class = "popup-address"><b>Address:</b> ${address}</p>
-    <p class = "popup-description"><b>Description:</b> ${description}</p>
-    <p class = "popup-rating"><b>Rating:</b> ${calculateAverageRating(
-      rating
-    )}</p>
-  `;
+  <img class = "popup-pic" src="${img}" alt="dogWalkerPic"">
+  <h1 class = "popup-header"><b>${dogwalkerName}</b></h1>
+  <p class = "popup-phone-number"><b>Phone Number:</b> ${phone}</p>
+  <p class = "popup-address"><b>Address:</b> ${address}</p>
+  <p class = "popup-description"><b>Description:</b> ${description}</p>
+  <p class = "popup-rating"><b>Rating:</b> ${calculateAverageRating(rating)}</p>
+`;
   } catch (e) {
     console.log(e);
   }
