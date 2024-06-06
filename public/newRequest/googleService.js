@@ -3,8 +3,11 @@ let geocoder;
 let directionsService;
 let directionsRenderer;
 let currentPosition;
+let mapLoader;
 
 function initMap() {
+  mapLoader = document.getElementById("loader");
+  showLoader();
   //initializes the Google Map, sets up geocoding, directions service, and renderer.
   //it also sets the initial map center to the user's current position if available.
 
@@ -12,25 +15,28 @@ function initMap() {
     center: { lat: 32.08732603245494, lng: 34.80405370566349 },
     zoom: 17,
   });
-  geocoder = new google.maps.Geocoder();
-  directionsService = new google.maps.DirectionsService();
-  directionsRenderer = new google.maps.DirectionsRenderer();
+  geocoder = new google.maps.Geocoder(); // convert addresses into geographic coordinates
+  directionsService = new google.maps.DirectionsService(); //calculate directions between locations
+  directionsRenderer = new google.maps.DirectionsRenderer(); // display directions obtained from the DirectionsService on the map.
   directionsRenderer.setMap(map);
 
   if (navigator.geolocation) {
+    // checks and ask user to allow location services so it can get its current location.
     navigator.geolocation.getCurrentPosition(
       function (position) {
         currentPosition = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-        reverseGeocode(currentPosition);
+
+        reverseGeocode(currentPosition); // getting the actual adress from the langtitude and longtitude
 
         map.setCenter(currentPosition);
         new google.maps.Marker({
           map: map,
           position: currentPosition,
         });
+        hideLoader();
       },
       function () {
         handleLocationError(true, map.getCenter());
@@ -104,4 +110,12 @@ function handleLocationError(browserHasGeolocation, pos) {
       ? "Error: The Geolocation service failed."
       : "Error: Your browser doesn't support geolocation."
   );
+}
+
+function showLoader() {
+  mapLoader.style.display = "flex";
+}
+
+function hideLoader() {
+  mapLoader.style.display = "none";
 }
