@@ -691,6 +691,12 @@
       "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
       "currentTime": "05:53",
       "timeDuration": "20"
+    },
+    {
+      "id": "0ff4",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "07:40",
+      "timeDuration": "20"
     }
   ]
 }
