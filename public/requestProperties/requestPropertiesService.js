@@ -5,23 +5,6 @@ export function addRequestToDom(URL, id) {
   });
 }
 
-export function updateData(location, time, duration) {
-  const dataURL = "http://localhost:8001/requests";
-  const params = new URLSearchParams(window.location.search);
-  const requestId = params.get("id");
-  const updatedRequest = {
-    currentLocation: location,
-    currentTime: time,
-    timeDuration: duration,
-  };
-  try {
-    axios.put(`${dataURL}/${requestId}`, updatedRequest);
-    // success message
-  } catch (err) {
-    // error message
-  }
-}
-
 export function deleteRequest() {
   const params = new URLSearchParams(window.location.search);
   const requestId = params.get("id");
