@@ -543,6 +543,9 @@ body.swal2-shown > [aria-hidden="true"] {
   }
 }
 @media screen and (min-width: 750px) {
+  .request-detail-wrapper {
+    height: 450px;
+  }
   .info-section {
     flex-direction: row;
   }
@@ -556,6 +559,11 @@ body.swal2-shown > [aria-hidden="true"] {
   }
   .dog-card {
     width: 500px;
+  }
+}
+@media screen and (min-width: 945px) {
+  .request-detail-wrapper {
+    height: 350px;
   }
 }
 
