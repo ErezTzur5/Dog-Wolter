@@ -72,7 +72,9 @@
         5,
         5,
         5,
-        5
+        5,
+        5,
+        4
       ],
       "id": "9af2",
       "phoneNumber": "0522345678"
@@ -192,7 +194,8 @@
         4.2,
         3.7,
         1.7,
-        3.9
+        3.9,
+        4
       ],
       "id": "9f42",
       "phoneNumber": "0526789012"
@@ -312,7 +315,8 @@
         4.3,
         3.7,
         4,
-        3.9
+        3.9,
+        4
       ],
       "id": "bac9",
       "phoneNumber": "0520123456"
@@ -617,6 +621,42 @@
       "id": "953c",
       "currentLocation": "Patai St 14, Giv'atayim, Israel",
       "currentTime": "04:48",
+      "timeDuration": "20"
+    },
+    {
+      "id": "36f3",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "04:57",
+      "timeDuration": "20"
+    },
+    {
+      "id": "853a",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "04:58",
+      "timeDuration": "20"
+    },
+    {
+      "id": "49ac",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "05:03",
+      "timeDuration": "20"
+    },
+    {
+      "id": "b854",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "05:28",
+      "timeDuration": "20"
+    },
+    {
+      "id": "5991",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "05:34",
+      "timeDuration": "15"
+    },
+    {
+      "id": "2e66",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "05:38",
       "timeDuration": "20"
     }
   ]

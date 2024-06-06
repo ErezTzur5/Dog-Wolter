@@ -77,10 +77,10 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 function displayTimeAndDuration() {
   const timeUntilArrivalDiv = document.getElementById("timeUntilArrival");
   timeUntilArrivalDiv.innerHTML = `
-  <div id="distance">Distance remaining: ${
+  <div id="distance"><i class="onwalk-road-icon fa-solid fa-road"></i> ${
     distanceP ? distanceP : "loading..."
   }</div>
-  <div id="duration">Time remaining: ${
+  <div id="duration"><i class="onwalk-time-icon fa-solid fa-stopwatch"></i> ${
     durationP ? durationP : "loading..."
   }</div>
   `;
@@ -104,10 +104,10 @@ function startCountdown(distance, duration) {
       totalTime -= 1;
       totalDistance -= distancePerSecond;
 
-      distanceDiv.innerText = `Distance remaining: ${totalDistance.toFixed(
+      distanceDiv.innerHTML = `<i class="onwalk-road-icon fa-solid fa-road"></i>${totalDistance.toFixed(
         1
       )} km`;
-      durationDiv.innerText = `Time remaining: ${totalTime} mins`;
+      durationDiv.innerHTML = `<i class="onwalk-time-icon fa-solid fa-stopwatch"></i>  ${totalTime} mins`;
     } else {
       clearInterval(interval);
       distanceDiv.classList.add("hidden");

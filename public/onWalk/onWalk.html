@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="../style/css/style.css" />
     <link
       rel="stylesheet"
@@ -38,17 +43,30 @@
             </div>
           </li>
           <li class="login">
-            <div class="links-list-element"><a href="login.html">Login</a></div>
+            <div class="links-list-element">
+              <a href="../login/login.html">Login</a>
+            </div>
           </li>
         </ul>
       </nav>
     </header>
 
-    <div id="map" style="height: 300px; width: 40%; border-radius: 8px"></div>
-    <h1>Your dogwalker is on their way...</h1>
-    <div id="timeUntilArrival"></div>
-
-    <div class="dog-walker-detail-wrapper" id="dogwolter-info"></div>
+    <main class="mainSection">
+      <h1 class="heading margin-top-big content-width-auto">
+        Your dogwalker is on their way...
+      </h1>
+      <div class="onwalk-detail-grid">
+        <div>
+          <div
+            id="map"
+            class="location-map onwalk-location-map"
+            style="height: 100%; width: 100%"
+          ></div>
+          <div class="onwalk-info-icons" id="timeUntilArrival"></div>
+        </div>
+        <div class="walker-onwalk-detail-wrapper" id="dogwolter-info"></div>
+      </div>
+    </main>
 
     <script type="module" src="./onWalk.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
