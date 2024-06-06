@@ -5,9 +5,10 @@ let directionsRenderer;
 let currentPosition;
 let mapLoader;
 
+mapLoader = document.getElementById("loader");
+showLoader();
+
 function initMap() {
-  mapLoader = document.getElementById("loader");
-  showLoader();
   //initializes the Google Map, sets up geocoding, directions service, and renderer.
   //it also sets the initial map center to the user's current position if available.
 
@@ -88,7 +89,6 @@ function reverseGeocode(latlng) {
   geocoder.geocode({ location: latlng }, function (results, status) {
     if (status === "OK") {
       if (results[0]) {
-        console.log("Address:", results[0].formatted_address);
         document.getElementById("current-location").value =
           results[0].formatted_address;
         return results[0].formatted_address;

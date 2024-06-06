@@ -693,3 +693,20 @@ body.swal2-shown > [aria-hidden="true"] {
     height: 350px;
   }
 }
+
+.loader {
+  position: absolute;
+  top: 37%;
+  left: 27%;
+  width: 200px;
+  height: 100px;
+  background-image: url("../images/WolfWildNew.gif");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  z-index: 1000;
+}
+

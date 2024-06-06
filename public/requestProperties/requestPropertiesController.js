@@ -6,6 +6,7 @@ import {
 } from "./requestPropertiesService.js";
 
 import { swalService } from "../swalServices.js";
+const mapLoader = document.getElementById("loader");
 
 document.addEventListener("DOMContentLoaded", async function () {
   const dataURL = "http://localhost:8001/requests";
@@ -156,6 +157,7 @@ function addRandomDogWalkersToDom(URL, count) {
         const delay = Math.floor(Math.random() * (6000 - 2000 + 1)) + 2000;
         setTimeout(() => {
           availableDogwalkersDiv.appendChild(dogwalkerCard);
+          hideLoader();
         }, delay);
       });
     })
@@ -175,4 +177,12 @@ function onInit() {
   window.onClickDeleteButton = onClickDeleteButton;
   window.onClickShowDogwalkerButton = onClickShowDogwalkerButton;
   window.onClickAcceptButton = onClickAcceptButton;
+}
+
+export function showLoader() {
+  mapLoader.style.display = "flex";
+}
+
+export function hideLoader() {
+  mapLoader.style.display = "none";
 }
