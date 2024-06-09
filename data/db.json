@@ -3,7 +3,7 @@
     {
       "id": "1f78",
       "image": "../style/images/OIG1.jpg",
-      "name": "Rexi",
+      "name": "kusmok",
       "age": "3 years old",
       "breed": "Labrador",
       "hobbies": "Fetching tennis balls, swimming in the lake, going for long walks in the park, cuddling with stuffed toys, learning new tricks",
@@ -41,7 +41,11 @@
         5,
         5,
         2,
-        5
+        5,
+        4,
+        5,
+        5,
+        0
       ],
       "id": "ec5e",
       "phoneNumber": "0521234567"
@@ -199,6 +203,7 @@
         5,
         5,
         5,
+        5,
         5
       ],
       "id": "9f42",
@@ -330,9 +335,45 @@
   ],
   "requests": [
     {
-      "id": "e17a",
+      "id": "f2dc",
+      "currentLocation": "Ha-Khilazon St 3, Ramat Gan, Israel",
+      "currentTime": "10:32",
+      "timeDuration": "20"
+    },
+    {
+      "id": "01a3",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "11:08",
+      "timeDuration": "20"
+    },
+    {
+      "id": "8582",
       "currentLocation": "Dizengoff Square, Tel Aviv-Yafo",
-      "currentTime": "08:42",
+      "currentTime": "11:08",
+      "timeDuration": "20"
+    },
+    {
+      "id": "4b1b",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "11:56",
+      "timeDuration": "10"
+    },
+    {
+      "id": "a32b",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "12:00",
+      "timeDuration": "20"
+    },
+    {
+      "id": "6b64",
+      "currentLocation": "Patai St 14, Giv'atayim, Israel",
+      "currentTime": "12:06",
+      "timeDuration": "20"
+    },
+    {
+      "id": "62e2",
+      "currentLocation": "דיזנגוף, Tel Aviv-Yafo, Israel",
+      "currentTime": "22:37",
       "timeDuration": "20"
     }
   ]
